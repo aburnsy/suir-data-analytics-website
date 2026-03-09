@@ -1,0 +1,144 @@
+---
+// Contact page
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | Suir Data Analytics</title>
+    <meta name="description" content="Get in touch with Suir Data Analytics. Book a free 30-minute process review to discuss your automation and software needs.">
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation (same as homepage) -->
+    <nav class="bg-white shadow-sm">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex-shrink-0">
+                    <a href="/"><h1 class="text-2xl font-bold text-blue-600">Suir Data Analytics</h1></a>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="/" class="text-gray-700 hover:text-blue-600">Home</a>
+                    <a href="/services" class="text-gray-700 hover:text-blue-600">Services</a>
+                    <a href="/case-studies" class="text-gray-700 hover:text-blue-600">Case Studies</a>
+                    <a href="/about" class="text-gray-700 hover:text-blue-600">About</a>
+                    <a href="/contact" class="text-gray-700 hover:text-blue-600 font-semibold">Contact</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Contact Page Content -->
+    <section class="py-20">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-4xl font-bold text-gray-900 mb-6 text-center">Let's Talk About Your Automation Needs</h2>
+            <p class="text-xl text-gray-600 mb-12 text-center max-w-2xl mx-auto">
+                Book a free 30-minute call or send us a message. We'll discuss your biggest manual headaches and recommend practical next steps.
+            </p>
+
+            <div class="grid md:grid-cols-2 gap-12">
+                <!-- Contact Form -->
+                <div class="bg-white p-8 rounded-lg shadow-sm">
+                    <h3 class="text-2xl font-semibold mb-6">Send Us a Message</h3>
+                    
+                    <!-- Netlify Form -->
+                    <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="space-y-4">
+                        <input type="hidden" name="form-name" value="contact" />
+                        <p class="hidden">
+                            <label>Don't fill this out: <input name="bot-field" /></label>
+                        </p>
+                        
+                        <div>
+                            <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Name *</label>
+                            <input type="text" id="name" name="name" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-transparent" />
+                        </div>
+
+                        <div>
+                            <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email *</label>
+                            <input type="email" id="email" name="email" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-transparent" />
+                        </div>
+
+                        <div>
+                            <label for="phone" class="block text-sm font-medium text-gray-700 mb-1">Phone</label>
+                            <input type="tel" id="phone" name="phone" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-transparent" />
+                        </div>
+
+                        <div>
+                            <label for="company" class="block text-sm font-medium text-gray-700 mb-1">Company</label>
+                            <input type="text" id="company" name="company" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-transparent" />
+                        </div>
+
+                        <div>
+                            <label for="interest" class="block text-sm font-medium text-gray-700 mb-1">Interested In</label>
+                            <select id="interest" name="interest" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-transparent">
+                                <option value="">Select an option</option>
+                                <option value="automation">Business Automation</option>
+                                <option value="software">Custom Software</option>
+                                <option value="data">Data Analytics & Reporting</option>
+                                <option value="ai">AI & Intelligent Automation</option>
+                                <option value="not-sure">Not Sure / General Enquiry</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label for="message" class="block text-sm font-medium text-gray-700 mb-1">Message *</label>
+                            <textarea id="message" name="message" rows="4" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-transparent"></textarea>
+                        </div>
+
+                        <button type="submit" class="w-full bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 transition">
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Contact Info -->
+                <div>
+                    <div class="bg-blue-50 p-8 rounded-lg mb-8">
+                        <h3 class="text-2xl font-semibold mb-4">Get In Touch</h3>
+                        <div class="space-y-4">
+                            <div>
+                                <h4 class="font-semibold text-gray-900 mb-1">Email</h4>
+                                <a href="mailto:hello@suirdata.ie" class="text-blue-600 hover:underline">hello@suirdata.ie</a>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-gray-900 mb-1">Location</h4>
+                                <p class="text-gray-700">Serving Tipperary, Kilkenny, Laois<br>& surrounding South-East Ireland</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-white p-8 rounded-lg shadow-sm">
+                        <h3 class="text-xl font-semibold mb-4">What to Expect</h3>
+                        <ul class="space-y-3 text-gray-700">
+                            <li class="flex items-start">
+                                <span class="text-blue-600 mr-2">✓</span>
+                                <span>We'll respond within 1 business day</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-blue-600 mr-2">✓</span>
+                                <span>Free 30-minute discovery call to understand your needs</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-blue-600 mr-2">✓</span>
+                                <span>Honest assessment of what's possible and practical</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-blue-600 mr-2">✓</span>
+                                <span>No hard sell — just practical recommendations</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer (same as homepage) -->
+    <footer class="bg-gray-900 text-gray-400 py-12 mt-20">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <p>&copy; 2026 Suir Data Analytics. Built with ❤️ in Ireland.</p>
+        </div>
+    </footer>
+</body>
+</html>
