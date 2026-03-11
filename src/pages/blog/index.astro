@@ -1,0 +1,81 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import BlogPostCard from '../../components/BlogPostCard.astro';
+import { breadcrumbSchema } from '../../data/structured-data';
+
+const breadcrumbs = breadcrumbSchema([
+  { name: 'Home', url: 'https://www.suirda.ie/' },
+  { name: 'Blog', url: 'https://www.suirda.ie/blog' },
+]);
+---
+
+<BaseLayout
+  title="Blog — Insights for SMEs"
+  description="Practical advice on automation, custom software, and data analytics for SMEs in Tipperary, Kilkenny & Laois. Tips, guides, and real-world insights."
+  structuredData={breadcrumbs}
+>
+    <Header />
+
+    <!-- Breadcrumbs -->
+    <nav class="bg-white border-b border-gray-200">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
+            <ol class="flex items-center space-x-2 text-sm text-gray-500">
+                <li><a href="/" class="hover:text-blue-600 transition">Home</a></li>
+                <li>/</li>
+                <li class="text-gray-900 font-medium">Blog</li>
+            </ol>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="py-20 bg-gradient-to-br from-blue-50 to-white">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">Insights for SMEs</h1>
+            <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                Practical advice on automation, custom software, and data analytics for businesses in Tipperary, Kilkenny & Laois.
+            </p>
+        </div>
+    </section>
+
+    <!-- Blog Posts Grid -->
+    <section class="py-16 bg-white">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 gap-8">
+                <BlogPostCard
+                    title="5 Manual Tasks Costing Tipperary SMEs Time and Money"
+                    date="March 2026"
+                    excerpt="Every business has them — the repetitive tasks that eat hours every week. Here are the five most common time-wasters we see in regional SMEs, and what to do about them."
+                    href="/blog/manual-tasks-costing-smes"
+                />
+                <BlogPostCard
+                    title="When Does a Kilkenny Business Need Custom Software?"
+                    date="March 2026"
+                    excerpt="Off-the-shelf software works for most businesses. But what happens when it doesn't? Here's how to know when it's time to build something bespoke."
+                    href="/blog/when-need-custom-software"
+                />
+                <BlogPostCard
+                    title="How Cloud-Based Automation Makes Enterprise Efficiency Affordable"
+                    date="March 2026"
+                    excerpt="Enterprise tools used to cost enterprise money. Not anymore. Here's how cloud-based automation is levelling the playing field for SMEs."
+                    href="/blog/cloud-automation-affordable"
+                />
+                <BlogPostCard
+                    title="Real Cost Breakdown: What €10k Buys in Custom Software"
+                    date="March 2026"
+                    excerpt="Transparent pricing for a notoriously opaque industry. We break down exactly what you get at every budget level."
+                    href="/blog/what-10k-buys-custom-software"
+                />
+                <BlogPostCard
+                    title="Why Local Matters When Choosing an Automation Partner"
+                    date="March 2026"
+                    excerpt="Dublin agencies. Offshore teams. Or the consultant down the road. Here's why geography still matters when it comes to technology partnerships."
+                    href="/blog/why-local-partner-matters"
+                />
+            </div>
+        </div>
+    </section>
+
+    <Footer />
+</BaseLayout>
