@@ -1,0 +1,122 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import CTASection from '../../components/CTASection.astro';
+import { breadcrumbSchema, serviceSchema } from '../../data/structured-data';
+
+const breadcrumbs = breadcrumbSchema([
+  { name: 'Home', url: 'https://www.suirda.ie/' },
+  { name: 'Services', url: 'https://www.suirda.ie/services' },
+  { name: 'Custom Software Development', url: 'https://www.suirda.ie/services/custom-software' },
+]);
+
+const service = serviceSchema(
+  'Custom Software Development',
+  'Bespoke web apps, customer portals, and internal tools built to fit how your business works. Custom software for SMEs in Tipperary, Kilkenny & Laois.',
+  'https://www.suirda.ie/services/custom-software',
+);
+---
+
+<BaseLayout
+  title="Custom Software Development"
+  description="Bespoke web apps, customer portals, and internal tools built to fit how your business works. Custom software for SMEs in Tipperary, Kilkenny & Laois. From €5k."
+  structuredData={[breadcrumbs, service]}
+>
+    <Header />
+
+    <!-- Hero -->
+    <section class="py-20 bg-gradient-to-br from-blue-50 to-white">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">Custom Software Development</h1>
+            <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                Off-the-shelf software rarely fits perfectly. We build bespoke tools that match how your business actually works -- not the other way around.
+            </p>
+        </div>
+    </section>
+
+    <!-- Common Challenges -->
+    <section class="py-16 bg-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-gray-900 mb-8 text-center">Common Challenges We Solve</h2>
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="bg-gray-50 p-6 rounded-lg">
+                    <h3 class="font-semibold text-gray-900 mb-2">Off-the-shelf software doesn't fit</h3>
+                    <p class="text-gray-600 text-sm">You're paying for features you don't need while missing the ones you do. Workarounds pile up and slow your team down.</p>
+                </div>
+                <div class="bg-gray-50 p-6 rounded-lg">
+                    <h3 class="font-semibold text-gray-900 mb-2">Spreadsheet workarounds everywhere</h3>
+                    <p class="text-gray-600 text-sm">Critical business processes running on Excel files passed around by email -- fragile, error-prone, and impossible to scale.</p>
+                </div>
+                <div class="bg-gray-50 p-6 rounded-lg">
+                    <h3 class="font-semibold text-gray-900 mb-2">Paper processes still in use</h3>
+                    <p class="text-gray-600 text-sm">Forms, sign-offs, and records still handled on paper, creating delays and making information hard to find when you need it.</p>
+                </div>
+                <div class="bg-gray-50 p-6 rounded-lg">
+                    <h3 class="font-semibold text-gray-900 mb-2">Systems don't talk to each other</h3>
+                    <p class="text-gray-600 text-sm">Customer data in one system, orders in another, accounts in a third -- no single source of truth for your business.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How We Help -->
+    <section class="py-16 bg-gray-50">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-gray-900 mb-8 text-center">How We Help</h2>
+            <div class="space-y-6 text-gray-700 leading-relaxed">
+                <p>
+                    We build bespoke web applications, customer portals, and internal tools tailored to your exact requirements. Whether you need a booking system, a client dashboard, an inventory tracker, or a workflow management tool -- we design and develop software that fits your processes, not the other way around.
+                </p>
+                <p>
+                    We take an MVP-first approach: build the core functionality first, get it in front of users quickly, and iterate based on real feedback. Starting from EUR 5k for focused tools, with full systems ranging from EUR 10k to EUR 50k+. Everything is cloud-based, phased, and built to grow with your business.
+                </p>
+                <p>
+                    With deep experience across enterprise software engineering at JP Morgan, Citi, and Optum, we apply proven engineering practices -- version control, automated testing, CI/CD pipelines -- to every project, regardless of size. You get enterprise-quality software at SME prices.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Typical Outcomes -->
+    <section class="py-16 bg-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-gray-900 mb-12 text-center">Typical Outcomes</h2>
+            <div class="grid md:grid-cols-3 gap-8 text-center">
+                <div class="bg-gray-50 p-6 rounded-lg">
+                    <div class="text-3xl font-bold text-blue-600 mb-2">90% reduction</div>
+                    <p class="text-gray-600 text-sm">In manual deployment effort through automated CI/CD pipelines</p>
+                </div>
+                <div class="bg-gray-50 p-6 rounded-lg">
+                    <div class="text-3xl font-bold text-blue-600 mb-2">40% of bookings</div>
+                    <p class="text-gray-600 text-sm">Moved online within the first month, reducing phone call volume and admin time</p>
+                </div>
+                <div class="bg-gray-50 p-6 rounded-lg">
+                    <div class="text-3xl font-bold text-blue-600 mb-2">Hours reclaimed</div>
+                    <p class="text-gray-600 text-sm">Staff time freed from spreadsheet workarounds and manual processes every week</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technologies We Use -->
+    <section class="py-16 bg-gray-50">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-gray-900 mb-8 text-center">Technologies We Use</h2>
+            <div class="flex flex-wrap justify-center gap-3">
+                {['React', 'Node.js', 'Python', 'PostgreSQL', 'AWS', 'Docker', 'REST APIs', 'Cloud Hosting'].map(tech => (
+                    <span class="bg-white px-4 py-2 rounded-full text-sm font-medium text-gray-700 border border-gray-200">{tech}</span>
+                ))}
+            </div>
+        </div>
+    </section>
+
+    <CTASection
+        heading="Let's Discuss Your Software Needs"
+        text="Book a free 30-minute call. We'll scope out your requirements and show you what's possible."
+        secondaryLabel="View All Services"
+        secondaryHref="/services"
+    />
+
+    <Footer />
+</BaseLayout>
