@@ -1,0 +1,185 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import CTASection from '../../components/CTASection.astro';
+import { breadcrumbSchema, articleSchema } from '../../data/structured-data';
+
+const breadcrumbs = breadcrumbSchema([
+  { name: 'Home', url: 'https://www.suirda.ie/' },
+  { name: 'Case Studies', url: 'https://www.suirda.ie/case-studies' },
+  { name: 'Retail Software', url: 'https://www.suirda.ie/case-studies/retail-software' },
+]);
+
+const article = articleSchema(
+  'Custom Loyalty & Booking System for a Kilkenny Retailer',
+  'How we built a custom loyalty program and online booking system for a Kilkenny retailer, driving a 25% increase in repeat business within 6 months.',
+  'https://www.suirda.ie/case-studies/retail-software',
+  '2026-03-01',
+);
+---
+
+<BaseLayout
+  title="Custom Loyalty & Booking System — Retail Case Study"
+  description="How we built a custom loyalty program and online booking system for a Kilkenny retailer, driving a 25% increase in repeat business within 6 months."
+  structuredData={[breadcrumbs, article]}
+>
+    <Header />
+
+    <!-- Breadcrumbs -->
+    <nav class="bg-white border-b border-gray-200">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
+            <ol class="flex items-center space-x-2 text-sm text-gray-500">
+                <li><a href="/" class="hover:text-blue-600 transition">Home</a></li>
+                <li>/</li>
+                <li><a href="/case-studies" class="hover:text-blue-600 transition">Case Studies</a></li>
+                <li>/</li>
+                <li class="text-gray-900 font-medium">Retail Software</li>
+            </ol>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="py-20 bg-gradient-to-br from-blue-50 to-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div class="text-blue-600 font-semibold mb-4">Retail | Kilkenny</div>
+            <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">Custom Loyalty & Booking System for a Kilkenny Retailer</h1>
+            <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                How a custom-built system replaced off-the-shelf frustrations and drove a 25% increase in repeat business.
+            </p>
+        </div>
+    </section>
+
+    <!-- Overview Box -->
+    <section class="py-16 bg-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-blue-50 rounded-lg p-8">
+                <div class="grid md:grid-cols-4 gap-6 text-center">
+                    <div>
+                        <div class="text-sm font-semibold text-blue-600 uppercase tracking-wide mb-1">Client</div>
+                        <div class="text-gray-900 font-medium">Independent retailer, Kilkenny</div>
+                    </div>
+                    <div>
+                        <div class="text-sm font-semibold text-blue-600 uppercase tracking-wide mb-1">Industry</div>
+                        <div class="text-gray-900 font-medium">Retail</div>
+                    </div>
+                    <div>
+                        <div class="text-sm font-semibold text-blue-600 uppercase tracking-wide mb-1">Timeline</div>
+                        <div class="text-gray-900 font-medium">8 weeks (MVP)</div>
+                    </div>
+                    <div>
+                        <div class="text-sm font-semibold text-blue-600 uppercase tracking-wide mb-1">Key Result</div>
+                        <div class="text-green-600 font-bold text-lg">25% more repeat business</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- The Challenge -->
+    <section class="py-16 bg-gray-50">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-gray-900 mb-8">The Challenge</h2>
+            <div class="space-y-6 text-gray-700 leading-relaxed">
+                <p>
+                    An independent retailer in Kilkenny had no way to track repeat customers or their buying patterns. Bookings for services were handled entirely by phone, tying up staff and losing potential customers who called outside business hours. The shop was busy, the team was stretched, and every missed call during peak hours was a potential lost booking.
+                </p>
+                <p>
+                    They'd tried two off-the-shelf loyalty apps, but neither integrated with their existing POS system, creating double-entry and staff frustration. Each transaction had to be recorded twice -- once in the POS and once in the loyalty app. Staff often forgot or didn't have time, meaning the loyalty data was always incomplete and unreliable. Customers who should have been earning points were being missed, leading to complaints and awkward conversations at the till.
+                </p>
+                <p>
+                    Customer data was scattered across the POS, a paper sign-up book, and the owner's personal contacts. They knew their regulars by face but had no data to drive targeted promotions or understand seasonal patterns. When Christmas came around, they sent the same generic promotion to everyone -- loyal weekly customers got the same offer as someone who'd visited once six months ago.
+                </p>
+                <p>
+                    The owner knew there was a better way but had been burned by the off-the-shelf approach twice already. They needed something that actually worked with their existing systems, not alongside them.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Solution -->
+    <section class="py-16 bg-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-gray-900 mb-8">Our Solution</h2>
+            <div class="space-y-6 text-gray-700 leading-relaxed">
+                <p>
+                    We built a custom web application that integrates directly with their existing POS system via API. Rather than asking staff to use a separate system, we built the solution around their existing workflow -- loyalty points are tracked automatically from POS transactions with zero additional effort from staff.
+                </p>
+                <p>
+                    The system includes five core features designed around the retailer's specific needs:
+                </p>
+                <ul class="list-disc pl-6 space-y-3">
+                    <li><strong>Online booking</strong> -- customers can book 24/7 from their phone, with automatic confirmation and reminder emails. No more missed calls during busy periods.</li>
+                    <li><strong>Customer profiles</strong> -- automatically created and updated from POS transactions. Every purchase builds a richer picture of each customer's preferences and visit frequency.</li>
+                    <li><strong>Loyalty points system</strong> -- tied directly to purchases through the POS integration. Points accumulate automatically, and customers can check their balance online.</li>
+                    <li><strong>Targeted email promotions</strong> -- based on actual buying history. The system segments customers by frequency, spend, and product preferences, enabling personalised offers that feel relevant rather than generic.</li>
+                    <li><strong>Management dashboard</strong> -- showing customer retention rates, booking trends, revenue by customer segment, and promotion performance. The owner can see at a glance which customers are becoming more frequent and which are at risk of lapsing.</li>
+                </ul>
+                <p>
+                    We took an MVP-first approach -- the booking system went live in week 4, with loyalty features rolling out over the following month. This meant the business started seeing value almost immediately, with bookings coming in online from the first week. Staff training was minimal because the interface was designed around their existing workflow rather than requiring them to learn an entirely new process.
+                </p>
+                <p>
+                    The system was built to grow with the business. New features -- such as gift card integration and a referral programme -- can be added incrementally without disrupting what's already working.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Results -->
+    <section class="py-16 bg-gray-50">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-gray-900 mb-12 text-center">Results</h2>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="bg-white p-6 rounded-lg shadow-sm text-center">
+                    <div class="text-3xl font-bold text-green-600 mb-2">25% increase</div>
+                    <p class="text-gray-600">In repeat business within 6 months</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-sm text-center">
+                    <div class="text-3xl font-bold text-green-600 mb-2">40% of bookings</div>
+                    <p class="text-gray-600">Now made online, reducing phone interruptions</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-sm text-center">
+                    <div class="text-3xl font-bold text-green-600 mb-2">5+ hours/week</div>
+                    <p class="text-gray-600">Saved on phone bookings and manual tracking</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-sm text-center">
+                    <div class="text-3xl font-bold text-green-600 mb-2">15% higher</div>
+                    <p class="text-gray-600">Response rates on targeted vs generic promotions</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technologies Used -->
+    <section class="py-16 bg-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-gray-900 mb-8 text-center">Technologies Used</h2>
+            <div class="flex flex-wrap justify-center gap-3">
+                {['React', 'Node.js', 'PostgreSQL', 'REST API', 'Cloud Hosting'].map(tech => (
+                    <span class="bg-blue-50 text-blue-700 px-4 py-2 rounded-full text-sm font-medium">{tech}</span>
+                ))}
+            </div>
+        </div>
+    </section>
+
+    <!-- Quote -->
+    <section class="py-16 bg-gray-50">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <blockquote class="border-l-4 border-blue-600 pl-8 py-4">
+                <p class="text-xl text-gray-700 italic leading-relaxed mb-4">
+                    "The booking system paid for itself in the first month. Customers love being able to book online, and we finally understand who our best customers are."
+                </p>
+                <cite class="text-gray-600 font-semibold not-italic">&mdash; Store Owner</cite>
+            </blockquote>
+        </div>
+    </section>
+
+    <CTASection
+        heading="Need Software That Actually Fits Your Business?"
+        text="Book a free 30-minute call. We'll discuss your challenges and explore whether custom software is the right solution."
+        secondaryLabel="View All Case Studies"
+        secondaryHref="/case-studies"
+    />
+
+    <Footer />
+</BaseLayout>
