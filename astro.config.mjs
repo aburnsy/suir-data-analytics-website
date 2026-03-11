@@ -7,6 +7,6 @@ export default defineConfig({
   integrations: [tailwind(), sitemap()],
   output: 'static',
   build: {
-    format: 'file'
+    format: 'directory'
   }
 });
