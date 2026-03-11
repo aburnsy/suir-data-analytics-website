@@ -1,0 +1,122 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import CTASection from '../../components/CTASection.astro';
+import { breadcrumbSchema, serviceSchema } from '../../data/structured-data';
+
+const breadcrumbs = breadcrumbSchema([
+  { name: 'Home', url: 'https://www.suirda.ie/' },
+  { name: 'Services', url: 'https://www.suirda.ie/services' },
+  { name: 'AI & Intelligent Automation', url: 'https://www.suirda.ie/services/ai-automation' },
+]);
+
+const service = serviceSchema(
+  'AI & Intelligent Automation',
+  'Intelligent document processing, chatbots, and predictive analytics for SMEs. AI automation in Tipperary, Kilkenny & Laois.',
+  'https://www.suirda.ie/services/ai-automation',
+);
+---
+
+<BaseLayout
+  title="AI & Intelligent Automation"
+  description="Intelligent document processing, chatbots, and predictive analytics for SMEs. AI automation in Tipperary, Kilkenny & Laois. Enterprise-grade AI at affordable prices."
+  structuredData={[breadcrumbs, service]}
+>
+    <Header />
+
+    <!-- Hero -->
+    <section class="py-20 bg-gradient-to-br from-blue-50 to-white">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">AI & Intelligent Automation</h1>
+            <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                AI isn't just for big tech. Businesses in Tipperary, Kilkenny, and Laois can now access enterprise-grade AI tools to automate complex tasks, predict demand, and serve customers better -- affordably.
+            </p>
+        </div>
+    </section>
+
+    <!-- Common Challenges -->
+    <section class="py-16 bg-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-gray-900 mb-8 text-center">Common Challenges We Solve</h2>
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="bg-gray-50 p-6 rounded-lg">
+                    <h3 class="font-semibold text-gray-900 mb-2">Repetitive document processing</h3>
+                    <p class="text-gray-600 text-sm">Invoices, purchase orders, forms, and applications being manually read, entered, and filed -- consuming hours of staff time every day.</p>
+                </div>
+                <div class="bg-gray-50 p-6 rounded-lg">
+                    <h3 class="font-semibold text-gray-900 mb-2">No predictive capability</h3>
+                    <p class="text-gray-600 text-sm">You're reacting to demand rather than anticipating it. Inventory runs out, staffing is wrong, and opportunities are missed because there's no forecasting in place.</p>
+                </div>
+                <div class="bg-gray-50 p-6 rounded-lg">
+                    <h3 class="font-semibold text-gray-900 mb-2">Manual customer support queries</h3>
+                    <p class="text-gray-600 text-sm">Staff answering the same questions over and over by phone and email, when many could be handled instantly by an intelligent chatbot.</p>
+                </div>
+                <div class="bg-gray-50 p-6 rounded-lg">
+                    <h3 class="font-semibold text-gray-900 mb-2">High-volume processes needing human judgment</h3>
+                    <p class="text-gray-600 text-sm">Tasks that require some level of decision-making but happen at such volume that manual handling creates bottlenecks and inconsistencies.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How We Help -->
+    <section class="py-16 bg-gray-50">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-gray-900 mb-8 text-center">How We Help</h2>
+            <div class="space-y-6 text-gray-700 leading-relaxed">
+                <p>
+                    We deploy intelligent document extraction to automatically read and process invoices, forms, and applications -- eliminating manual data entry and reducing errors. For customer-facing businesses, we build chatbots that handle common queries instantly, freeing your team to focus on complex issues that genuinely need a human touch.
+                </p>
+                <p>
+                    Our predictive analytics solutions help you forecast demand, optimise inventory levels, plan staffing, and identify trends before they become obvious. We also use process mining to analyse your existing workflows and pinpoint exactly where AI automation will deliver the greatest return.
+                </p>
+                <p>
+                    This is the cutting edge -- and it's now accessible to regional SMEs. Businesses across Tipperary, Kilkenny, and Laois can leverage the same AI tools that power enterprise organisations, tailored to local needs and budgets. Whether you're exploring AI automation in Kilkenny or looking for intelligent automation in Laois, we make it practical and affordable.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Typical Outcomes -->
+    <section class="py-16 bg-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-gray-900 mb-12 text-center">Typical Outcomes</h2>
+            <div class="grid md:grid-cols-3 gap-8 text-center">
+                <div class="bg-gray-50 p-6 rounded-lg">
+                    <div class="text-3xl font-bold text-blue-600 mb-2">3% conversion lift</div>
+                    <p class="text-gray-600 text-sm">Improvement in referral conversion rates, delivering six-figure bottom-line impact</p>
+                </div>
+                <div class="bg-gray-50 p-6 rounded-lg">
+                    <div class="text-3xl font-bold text-blue-600 mb-2">Hours to minutes</div>
+                    <p class="text-gray-600 text-sm">Document processing time reduced from hours of manual work to minutes of automated extraction</p>
+                </div>
+                <div class="bg-gray-50 p-6 rounded-lg">
+                    <div class="text-3xl font-bold text-blue-600 mb-2">Errors eliminated</div>
+                    <p class="text-gray-600 text-sm">Accuracy improvements from AI processing, eliminating manual data entry errors</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technologies We Use -->
+    <section class="py-16 bg-gray-50">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-gray-900 mb-8 text-center">Technologies We Use</h2>
+            <div class="flex flex-wrap justify-center gap-3">
+                {['Python', 'Databricks', 'Spark', 'Cloud ML Services', 'Natural Language Processing', 'Computer Vision'].map(tech => (
+                    <span class="bg-white px-4 py-2 rounded-full text-sm font-medium text-gray-700 border border-gray-200">{tech}</span>
+                ))}
+            </div>
+        </div>
+    </section>
+
+    <CTASection
+        heading="Let's Discuss Your AI Needs"
+        text="Book a free 30-minute call. We'll explore where AI can deliver real, measurable value for your business."
+        secondaryLabel="View All Services"
+        secondaryHref="/services"
+    />
+
+    <Footer />
+</BaseLayout>
