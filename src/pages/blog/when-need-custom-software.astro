@@ -1,0 +1,160 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import CTASection from '../../components/CTASection.astro';
+import { breadcrumbSchema, articleSchema } from '../../data/structured-data';
+
+const breadcrumbs = breadcrumbSchema([
+  { name: 'Home', url: 'https://www.suirda.ie/' },
+  { name: 'Blog', url: 'https://www.suirda.ie/blog' },
+  { name: 'When to Build Custom Software', url: 'https://www.suirda.ie/blog/when-need-custom-software' },
+]);
+
+const article = articleSchema(
+  'When Does a Kilkenny Business Need Custom Software?',
+  'How to know when off-the-shelf software isn\'t enough and it\'s time to invest in bespoke software built for your business.',
+  'https://www.suirda.ie/blog/when-need-custom-software',
+  '2026-03-01',
+);
+---
+
+<BaseLayout
+  title="When Does a Kilkenny Business Need Custom Software?"
+  description="How to know when off-the-shelf software isn't enough. 5 signs you've outgrown standard tools, cost expectations, and a decision framework for custom vs off-the-shelf."
+  structuredData={[breadcrumbs, article]}
+>
+    <Header />
+
+    <!-- Breadcrumbs -->
+    <nav class="bg-white border-b border-gray-200">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
+            <ol class="flex items-center space-x-2 text-sm text-gray-500">
+                <li><a href="/" class="hover:text-blue-600 transition">Home</a></li>
+                <li>/</li>
+                <li><a href="/blog" class="hover:text-blue-600 transition">Blog</a></li>
+                <li>/</li>
+                <li class="text-gray-900 font-medium">When to Build Custom Software</li>
+            </ol>
+        </div>
+    </nav>
+
+    <!-- Article -->
+    <article class="py-16 bg-white">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+            <header class="mb-12">
+                <time class="text-sm text-gray-500">March 2026</time>
+                <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mt-2 mb-6 leading-tight">When Does a Kilkenny Business Need Custom Software?</h1>
+                <p class="text-xl text-gray-600 leading-relaxed">
+                    Off-the-shelf software works for most businesses, most of the time. But what happens when it doesn't? Here's how to know when it's time to build something bespoke -- and when it's not.
+                </p>
+            </header>
+
+            <div class="space-y-8 text-gray-700 leading-relaxed text-lg">
+
+                <h2 class="text-2xl font-bold text-gray-900 pt-4">When Off-the-Shelf Works (Most of the Time)</h2>
+                <p>
+                    Let's start with an honest truth: for the vast majority of business needs, off-the-shelf software is the right choice. Accounting? Use Xero or Sage. Email marketing? Mailchimp or Brevo. Project management? Asana or Monday.com. These tools exist because the problems they solve are common across thousands of businesses.
+                </p>
+                <p>
+                    If a well-known SaaS tool does 90% or more of what you need, use it. It's cheaper, it's maintained by a dedicated team, and it's updated regularly. Don't build custom software to solve a problem that's already been solved well.
+                </p>
+                <p>
+                    So when does custom make sense? When the gap between what off-the-shelf offers and what your business actually needs starts costing you real time and money.
+                </p>
+
+                <h2 class="text-2xl font-bold text-gray-900 pt-4">5 Signs You've Outgrown Off-the-Shelf</h2>
+
+                <h3 class="text-xl font-semibold text-gray-900 pt-2">1. Spreadsheet workarounds are everywhere</h3>
+                <p>
+                    Your team uses the main software system for the basics, but then exports data into spreadsheets for everything the system can't do. There are spreadsheets for tracking, spreadsheets for reporting, spreadsheets for managing the gaps between your other tools. When your "system" is actually three software tools held together by Excel, you've outgrown off-the-shelf.
+                </p>
+
+                <h3 class="text-xl font-semibold text-gray-900 pt-2">2. Multiple systems that don't talk to each other</h3>
+                <p>
+                    You have a CRM, an accounting tool, a booking system, and a project management tool -- and none of them share data. Your team copies information between systems manually, which means data is always slightly out of date in at least one place. Integrations either don't exist or cost more than the tools themselves.
+                </p>
+
+                <h3 class="text-xl font-semibold text-gray-900 pt-2">3. Your processes are genuinely unique</h3>
+                <p>
+                    Every business thinks their processes are unique. Most aren't. But some genuinely are. If your industry, your market, or your business model requires workflows that no standard tool supports, custom software starts making sense. A retailer with a unique loyalty structure tied to their POS, a manufacturer with bespoke quality tracking requirements, a services firm with a non-standard client onboarding process -- these are the situations where custom shines.
+                </p>
+
+                <h3 class="text-xl font-semibold text-gray-900 pt-2">4. You're paying for features you don't use while missing ones you need</h3>
+                <p>
+                    Enterprise SaaS tools are built for the broadest possible market. You might be paying EUR 50 per user per month for a system where your team uses 20% of the features -- while the three features you actually need don't exist. Over time, the cost of paying for what you don't need, plus the time cost of working around what's missing, adds up to more than a custom build would cost.
+                </p>
+
+                <h3 class="text-xl font-semibold text-gray-900 pt-2">5. Competitive advantage requires proprietary tooling</h3>
+                <p>
+                    If your business competes on speed, customer experience, or operational efficiency, the tools you use matter. When every competitor uses the same off-the-shelf tools, nobody has an edge. Custom software that's built around your specific strengths can become a genuine competitive advantage -- something your competitors can't simply buy.
+                </p>
+
+                <h2 class="text-2xl font-bold text-gray-900 pt-4">The Decision Framework</h2>
+                <p>
+                    Before deciding to build custom, work through these three questions:
+                </p>
+                <p>
+                    <strong>Complexity of requirements:</strong> How specific are your needs? If your requirements can be described in a sentence ("we need a booking system"), off-the-shelf probably works. If describing your requirements takes a page ("we need a booking system that integrates with our POS, tracks loyalty points, segments customers by purchase history, and generates targeted promotions based on seasonal patterns"), custom is worth considering.
+                </p>
+                <p>
+                    <strong>Number of integrations needed:</strong> The more systems you need to connect, the stronger the case for custom. Off-the-shelf tools integrate with other off-the-shelf tools, but connecting three or more systems in a workflow that matches your specific process usually requires custom development.
+                </p>
+                <p>
+                    <strong>Long-term cost comparison:</strong> Add up what you're paying for your current tools (monthly subscriptions, per-user fees) plus the labour cost of manual workarounds. Compare that to the cost of a custom build plus ongoing hosting and maintenance. Often, the break-even point comes sooner than you'd expect -- sometimes within 12-18 months.
+                </p>
+
+                <h2 class="text-2xl font-bold text-gray-900 pt-4">What It Costs</h2>
+                <p>
+                    Custom software doesn't have to mean six-figure budgets. Here's a realistic breakdown for the Irish market:
+                </p>
+                <ul class="list-disc pl-6 space-y-3">
+                    <li><strong>EUR 5k -- Focused MVP:</strong> A single-purpose tool that solves one specific problem well. An online booking system, an automated reporting dashboard, or a customer intake form with workflow automation.</li>
+                    <li><strong>EUR 10k-25k -- Feature-rich application:</strong> A customer portal with authentication, dashboard, booking, and notifications. Or a complete automation suite covering 3-4 connected workflows.</li>
+                    <li><strong>EUR 25k-50k+ -- Complex multi-user platform:</strong> A custom CRM tailored to your business, inventory management with supplier integration, or a multi-location management tool with role-based access.</li>
+                </ul>
+
+                <h2 class="text-2xl font-bold text-gray-900 pt-4">Timeline Expectations</h2>
+                <p>
+                    Custom software doesn't take as long as you might think:
+                </p>
+                <ul class="list-disc pl-6 space-y-3">
+                    <li><strong>4-8 weeks for an MVP:</strong> A working version of the core functionality that you can start using and getting feedback on.</li>
+                    <li><strong>2-4 months for a full build:</strong> The complete application with all planned features, integrations, testing, and training.</li>
+                </ul>
+                <p>
+                    We always recommend starting with an MVP. Build the core, prove the value, then invest in additional features once you're confident the approach is right.
+                </p>
+
+                <h2 class="text-2xl font-bold text-gray-900 pt-4">When NOT to Build Custom</h2>
+                <p>
+                    Custom software isn't always the answer. Don't build custom if:
+                </p>
+                <ul class="list-disc pl-6 space-y-3">
+                    <li><strong>A SaaS tool does 90%+ of what you need.</strong> The last 10% isn't worth the investment. Use the standard tool and adapt your process slightly.</li>
+                    <li><strong>Your requirements aren't clear.</strong> If you can't articulate what you need the software to do, you're not ready to build. Spend time mapping your processes and defining requirements first.</li>
+                    <li><strong>Your budget is under EUR 3k.</strong> Below this threshold, it's difficult to build something robust enough to be reliable. You're better off with off-the-shelf tools or investing more time in defining your requirements before engaging a developer.</li>
+                </ul>
+
+                <h2 class="text-2xl font-bold text-gray-900 pt-4">The Bottom Line</h2>
+                <p>
+                    Custom software is an investment, not an expense. When the fit is right, it pays for itself through time savings, reduced errors, and competitive advantage. But the key phrase is "when the fit is right." Not every business needs custom software, and the honest answer is sometimes "use Xero and Mailchimp and stop overcomplicating things."
+                </p>
+                <p>
+                    If you're not sure which camp you fall into, that's exactly what our free process review is for. We'll look at your current tools and workflows and give you an honest assessment -- even if that assessment is "you don't need us."
+                </p>
+            </div>
+        </div>
+    </article>
+
+    <CTASection
+        heading="Not Sure If Custom Software Is Right for You?"
+        text="Book a free 30-minute call. We'll review your current setup and give you an honest recommendation -- even if that recommendation is to stick with what you have."
+        primaryLabel="Book Your Free Process Review"
+        primaryHref="https://calendly.com/andy_burns/30min"
+        secondaryLabel="View Custom Software Services"
+        secondaryHref="/services/custom-software"
+    />
+
+    <Footer />
+</BaseLayout>
