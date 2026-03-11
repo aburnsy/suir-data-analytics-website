@@ -1,0 +1,158 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import CTASection from '../../components/CTASection.astro';
+import { breadcrumbSchema, articleSchema } from '../../data/structured-data';
+
+const breadcrumbs = breadcrumbSchema([
+  { name: 'Home', url: 'https://www.suirda.ie/' },
+  { name: 'Blog', url: 'https://www.suirda.ie/blog' },
+  { name: '5 Manual Tasks Costing SMEs', url: 'https://www.suirda.ie/blog/manual-tasks-costing-smes' },
+]);
+
+const article = articleSchema(
+  '5 Manual Tasks Costing Tipperary SMEs Time and Money',
+  'The five most common manual tasks costing regional SMEs 15-25 hours per week — and how automation can eliminate them.',
+  'https://www.suirda.ie/blog/manual-tasks-costing-smes',
+  '2026-03-01',
+);
+---
+
+<BaseLayout
+  title="5 Manual Tasks Costing Tipperary SMEs Time and Money"
+  description="The five most common manual tasks costing regional SMEs 15-25 hours per week — and how business automation can eliminate them. Practical advice for Tipperary, Kilkenny & Laois businesses."
+  structuredData={[breadcrumbs, article]}
+>
+    <Header />
+
+    <!-- Breadcrumbs -->
+    <nav class="bg-white border-b border-gray-200">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
+            <ol class="flex items-center space-x-2 text-sm text-gray-500">
+                <li><a href="/" class="hover:text-blue-600 transition">Home</a></li>
+                <li>/</li>
+                <li><a href="/blog" class="hover:text-blue-600 transition">Blog</a></li>
+                <li>/</li>
+                <li class="text-gray-900 font-medium">5 Manual Tasks Costing SMEs</li>
+            </ol>
+        </div>
+    </nav>
+
+    <!-- Article -->
+    <article class="py-16 bg-white">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+            <header class="mb-12">
+                <time class="text-sm text-gray-500">March 2026</time>
+                <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mt-2 mb-6 leading-tight">5 Manual Tasks Costing Tipperary SMEs Time and Money</h1>
+                <p class="text-xl text-gray-600 leading-relaxed">
+                    Every SME has them. The tasks everyone knows are wasteful but nobody's gotten around to fixing. The spreadsheet that takes half a day to update. The phone calls that could be an online form. The report that someone compiles manually every single month.
+                </p>
+            </header>
+
+            <div class="space-y-8 text-gray-700 leading-relaxed text-lg">
+                <p>
+                    After working with dozens of businesses across Tipperary, Kilkenny, and Laois, we see the same patterns again and again. Here are the five manual tasks that cost regional SMEs the most time and money -- and what you can do about each one.
+                </p>
+
+                <!-- Task 1 -->
+                <h2 class="text-2xl font-bold text-gray-900 pt-4">1. Monthly Reporting and Data Compilation</h2>
+                <p>
+                    This is the big one. Almost every business we work with has someone -- usually a manager or senior admin -- who spends one to two full days every month pulling numbers from different systems, copying them into spreadsheets, formatting charts, and compiling everything into a report or presentation for management.
+                </p>
+                <p>
+                    The data might come from your accounting software, your CRM, a production system, or a combination of all three. The process is always the same: log in, export, copy, paste, format, check, email. Repeat for each data source. By the time the report is ready, the data is already a week old and the person who compiled it is exhausted.
+                </p>
+                <p>
+                    <strong>The automation:</strong> Automated dashboards that pull data directly from your systems and update in real-time. No manual exports, no copying, no formatting. Reports generate automatically on a schedule and land in the right inboxes. Your team opens a dashboard instead of building a spreadsheet.
+                </p>
+                <p>
+                    <strong>Typical savings:</strong> <span class="text-green-600 font-semibold">8-16 hours per month</span>. One of our clients in Tipperary went from spending two days on monthly reports to spending two hours reviewing dashboards that update themselves.
+                </p>
+
+                <!-- Task 2 -->
+                <h2 class="text-2xl font-bold text-gray-900 pt-4">2. Invoice Processing and Data Entry</h2>
+                <p>
+                    Invoices arrive by email, by post, sometimes by text message. Someone on your team opens each one, reads the details, and manually enters the data into your accounting system. Then they might need to copy relevant information into a project management tool, a client file, or a separate tracking spreadsheet.
+                </p>
+                <p>
+                    It's slow, it's error-prone, and it's mind-numbingly repetitive. A single transposition error can cause hours of reconciliation work down the line. And if your business processes dozens or hundreds of invoices per week, the cumulative time cost is staggering.
+                </p>
+                <p>
+                    <strong>The automation:</strong> OCR (optical character recognition) technology reads invoice data automatically, and workflow automation routes it to the right system without manual intervention. The system extracts supplier details, line items, amounts, and due dates, then creates the corresponding entries in your accounting software. Exceptions are flagged for human review rather than requiring every invoice to be manually processed.
+                </p>
+                <p>
+                    <strong>Typical savings:</strong> <span class="text-green-600 font-semibold">5-10 hours per week</span>, depending on invoice volume. Plus a significant reduction in data entry errors that cause downstream problems.
+                </p>
+
+                <!-- Task 3 -->
+                <h2 class="text-2xl font-bold text-gray-900 pt-4">3. Inventory Management and Stock Checks</h2>
+                <p>
+                    If you sell physical products, you probably have someone doing manual stock counts, updating spreadsheets, and placing orders based on a combination of experience and gut feeling. When was the last time you ran out of a key item because nobody noticed stock was low until it was too late? Or over-ordered because the spreadsheet hadn't been updated?
+                </p>
+                <p>
+                    Manual inventory management works when you have a handful of products. But as your range grows, the spreadsheet approach starts breaking down. Numbers don't match reality, reorder points are guesswork, and nobody has a clear picture of what's actually on the shelves versus what's in the system.
+                </p>
+                <p>
+                    <strong>The automation:</strong> Integrated inventory management that connects to your POS or sales system. Stock levels update automatically with every sale. Automated reorder points trigger purchase orders when stock drops below a threshold. Dashboards show real-time inventory levels, turnover rates, and seasonal trends so you can make data-driven ordering decisions instead of relying on memory.
+                </p>
+                <p>
+                    <strong>Typical savings:</strong> <span class="text-green-600 font-semibold">3-5 hours per week</span> on manual tracking, plus reduced stockouts and over-ordering. The hidden saving is often the biggest: fewer emergency orders and less dead stock sitting on shelves.
+                </p>
+
+                <!-- Task 4 -->
+                <h2 class="text-2xl font-bold text-gray-900 pt-4">4. Customer Follow-ups and Scheduling</h2>
+                <p>
+                    Phone tag. That's what scheduling looks like for many SMEs. A customer calls to book an appointment, your team member isn't available, they leave a message, your team calls back, the customer doesn't answer. Eventually the appointment gets made -- or the customer gives up and goes elsewhere.
+                </p>
+                <p>
+                    Then there are the reminders. Someone on your team sends manual reminder emails or makes reminder calls the day before appointments. When they forget -- or when they're too busy -- the no-show rate spikes. Each no-show is lost revenue and a wasted time slot that could have gone to someone else.
+                </p>
+                <p>
+                    <strong>The automation:</strong> Online booking that lets customers schedule appointments 24/7 from their phone. Automated confirmation emails on booking, reminder emails 24 hours before, and follow-up emails after the appointment. Your team's calendar updates automatically, and customers can reschedule or cancel online without calling.
+                </p>
+                <p>
+                    <strong>Typical savings:</strong> <span class="text-green-600 font-semibold">5+ hours per week</span> on phone scheduling, plus a 30-50% reduction in no-shows through automated reminders. One Kilkenny retailer we worked with saw 40% of their bookings shift to online within the first month.
+                </p>
+
+                <!-- Task 5 -->
+                <h2 class="text-2xl font-bold text-gray-900 pt-4">5. Employee Onboarding and HR Paperwork</h2>
+                <p>
+                    Hiring someone new should be exciting. Instead, it's often a paperwork marathon. Collect personal details, bank information, tax forms, emergency contacts. Set up system access. Schedule training. Order equipment. Send the employee handbook. Get contracts signed. Track probation milestones.
+                </p>
+                <p>
+                    Most SMEs handle this with a combination of email, paper forms, and a checklist that lives in someone's head. Steps get missed. New hires spend their first day filling in forms instead of getting productive. The HR person (who usually has three other roles) spends days on admin that should take hours.
+                </p>
+                <p>
+                    <strong>The automation:</strong> A digital onboarding workflow with templates for each role. New hires receive a link to complete all their information online before day one. Documents are collected digitally with e-signatures. System access requests are triggered automatically. Training schedules are generated based on the role. A dashboard tracks progress for every new hire, flagging anything that's overdue.
+                </p>
+                <p>
+                    <strong>Typical savings:</strong> <span class="text-green-600 font-semibold">2-3 days per new hire</span>. When you're hiring 5-10 people a year, that's 10-30 days of admin time saved annually -- and a much better first impression for your new team members.
+                </p>
+
+                <!-- Summary -->
+                <h2 class="text-2xl font-bold text-gray-900 pt-4">Add It Up</h2>
+                <p>
+                    If your business is doing even three of these five tasks manually, you're likely spending 15-25 hours per week on work that could be automated. That's the equivalent of a part-time employee doing nothing but repetitive admin. At an average cost of EUR 15-25 per hour, that's EUR 12,000 to EUR 32,000 per year in labour costs on tasks that add no value to your business.
+                </p>
+                <p>
+                    The good news? You don't have to tackle everything at once. Most of our clients start with the single biggest time-waster -- usually reporting or scheduling -- and see ROI within weeks. Once that's working, they move on to the next one. A phased approach means lower risk, faster results, and a team that gets progressively more productive with each automation.
+                </p>
+                <p>
+                    The technology to automate these tasks isn't new or experimental. It's proven, affordable, and accessible to businesses of every size. The only question is how long you're willing to keep paying for manual work that a system could do for you.
+                </p>
+            </div>
+        </div>
+    </article>
+
+    <CTASection
+        heading="Book a Free 30-Minute Process Review"
+        text="We'll look at your current workflows, identify the biggest time-wasters, and show you exactly where automation can save you hours every week."
+        primaryLabel="Book Your Free Process Review"
+        primaryHref="https://calendly.com/andy_burns/30min"
+        secondaryLabel="View Our Services"
+        secondaryHref="/services"
+    />
+
+    <Footer />
+</BaseLayout>
