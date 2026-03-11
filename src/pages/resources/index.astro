@@ -1,0 +1,58 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import { breadcrumbSchema } from '../../data/structured-data';
+
+const breadcrumbs = breadcrumbSchema([
+  { name: 'Home', url: 'https://www.suirda.ie/' },
+  { name: 'Resources', url: 'https://www.suirda.ie/resources' },
+]);
+---
+
+<BaseLayout
+  title="Free Resources for SMEs"
+  description="Free guides and tools for Tipperary, Kilkenny & Laois SMEs looking to automate processes and build custom software."
+  structuredData={breadcrumbs}
+>
+    <Header />
+
+    <section class="py-20 bg-gradient-to-br from-blue-50 to-white">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">Free Resources</h1>
+            <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                Practical guides to help you make informed decisions about automation and software for your business.
+            </p>
+        </div>
+    </section>
+
+    <section class="py-16 bg-white">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="bg-white p-8 rounded-lg shadow-sm border border-gray-100">
+                    <div class="text-3xl mb-4">📋</div>
+                    <h2 class="text-xl font-semibold mb-3">10 Processes Every SME Can Automate</h2>
+                    <p class="text-gray-600 mb-4">
+                        Discover the most common manual processes draining your team's time — and how to automate each one with real ROI examples.
+                    </p>
+                    <a href="/resources/automation-guide" class="inline-block bg-blue-600 text-white px-6 py-2 rounded-lg font-semibold hover:bg-blue-700 transition text-sm">
+                        Download Free Guide
+                    </a>
+                </div>
+
+                <div class="bg-white p-8 rounded-lg shadow-sm border border-gray-100">
+                    <div class="text-3xl mb-4">🔍</div>
+                    <h2 class="text-xl font-semibold mb-3">Custom Software vs Off-the-Shelf: Decision Guide</h2>
+                    <p class="text-gray-600 mb-4">
+                        A practical framework to help you decide whether to build custom software or stick with off-the-shelf tools.
+                    </p>
+                    <a href="/resources/software-decision-guide" class="inline-block bg-blue-600 text-white px-6 py-2 rounded-lg font-semibold hover:bg-blue-700 transition text-sm">
+                        Download Free Guide
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <Footer />
+</BaseLayout>
