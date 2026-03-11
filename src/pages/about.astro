@@ -1,0 +1,204 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import CTASection from '../components/CTASection.astro';
+import { breadcrumbSchema, localBusinessSchema } from '../data/structured-data';
+
+const breadcrumbs = breadcrumbSchema([
+  { name: 'Home', url: 'https://www.suirda.ie/' },
+  { name: 'About', url: 'https://www.suirda.ie/about' },
+]);
+---
+
+<BaseLayout
+  title="About Suir Data Analytics"
+  description="Enterprise data engineering expertise for regional SMEs. 14+ years at Optum, JP Morgan & Citi. Based in Two Mile Borris, Co. Tipperary. Serving Tipperary, Kilkenny & Laois."
+  structuredData={[breadcrumbs, localBusinessSchema]}
+>
+    <Header />
+
+    <!-- Hero -->
+    <section class="py-20 bg-gradient-to-br from-blue-50 to-white">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">About Suir Data Analytics</h1>
+            <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                Helping regional SMEs in Tipperary, Kilkenny, and Laois compete with enterprise-grade technology -- without the enterprise price tag.
+            </p>
+        </div>
+    </section>
+
+    <!-- Company Story -->
+    <section class="py-16 bg-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-gray-900 mb-8 text-center">Our Story</h2>
+            <div class="space-y-6 text-gray-700 leading-relaxed">
+                <p>
+                    Suir Data Analytics is named after the River Suir, which flows through the heart of the South-East. Just as the river connects communities across the region, we connect local businesses with the technology they need to thrive.
+                </p>
+                <p>
+                    We were founded to bring enterprise-grade data engineering and automation expertise to local SMEs. After 14+ years working with some of the world's largest financial services and healthcare organisations, we saw a gap: regional businesses in Tipperary, Kilkenny, and Laois were being left behind -- not because they lacked ambition, but because they lacked access to the right technology and expertise.
+                </p>
+                <p>
+                    Our mission is simple: help businesses in the South-East compete through technology, without the enterprise price tag. Too many regional businesses are stuck with manual processes, spreadsheet workarounds, and off-the-shelf software that doesn't quite fit. We change that.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- What Makes Us Different -->
+    <section class="py-16 bg-gray-50">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-gray-900 mb-12 text-center">What Makes Us Different</h2>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="bg-white p-6 rounded-lg shadow-sm">
+                    <h3 class="text-xl font-semibold text-gray-900 mb-3">Local Presence</h3>
+                    <p class="text-gray-600">Face-to-face meetings, a deep understanding of regional business challenges, and genuine investment in the success of businesses across Tipperary, Kilkenny, and Laois.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-sm">
+                    <h3 class="text-xl font-semibold text-gray-900 mb-3">Enterprise Experience, SME Pricing</h3>
+                    <p class="text-gray-600">14+ years at Optum, JP Morgan, and Citi -- building systems that serve thousands of users. That same expertise is now available to local businesses at a fraction of the cost.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-sm">
+                    <h3 class="text-xl font-semibold text-gray-900 mb-3">Phased Approach</h3>
+                    <p class="text-gray-600">Start small with a focused pilot project (EUR 2k-5k), prove ROI, then scale what works. No big upfront commitment -- just measurable results before you invest further.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-sm">
+                    <h3 class="text-xl font-semibold text-gray-900 mb-3">Ongoing Support</h3>
+                    <p class="text-gray-600">We don't just build and leave. We're a local partner invested in your long-term success, with ongoing support, maintenance, and continuous improvement.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Meet Andy Burns -->
+    <section class="py-16 bg-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-gray-900 mb-8 text-center">Meet Andy Burns</h2>
+            <div class="space-y-6 text-gray-700 leading-relaxed">
+                <p>
+                    Andy is a Principal Analytics Engineer with 14+ years of experience in financial services and healthcare data engineering. He founded Suir Data Analytics to bring enterprise-grade technology to regional SMEs.
+                </p>
+
+                <h3 class="text-xl font-semibold text-gray-900 mt-8">Career Highlights</h3>
+                <div class="space-y-4 mt-4">
+                    <div class="bg-gray-50 p-4 rounded-lg">
+                        <h4 class="font-semibold text-gray-900">Optum &mdash; Principal Analytics Engineer</h4>
+                        <p class="text-gray-600 text-sm mt-1">Designed and built a medallion architecture on Databricks, achieving a 95% improvement in ETL performance (saving $50K+). Built dashboards ranked in the top 5 out of 10,000+ across the organisation.</p>
+                    </div>
+                    <div class="bg-gray-50 p-4 rounded-lg">
+                        <h4 class="font-semibold text-gray-900">JP Morgan &mdash; Senior Data Engineer (3.5 years)</h4>
+                        <p class="text-gray-600 text-sm mt-1">Built and optimised data warehouse infrastructure, achieving 76% faster data refresh times and improving regulatory reporting accuracy.</p>
+                    </div>
+                    <div class="bg-gray-50 p-4 rounded-lg">
+                        <h4 class="font-semibold text-gray-900">Citi &mdash; Engineering Manager SVP (5 years)</h4>
+                        <p class="text-gray-600 text-sm mt-1">Led a team of 14 engineers, scaling the Clarity platform to 100+ clients and 6,000+ users. Managed full development lifecycle from architecture to delivery.</p>
+                    </div>
+                    <div class="bg-gray-50 p-4 rounded-lg">
+                        <h4 class="font-semibold text-gray-900">First Derivatives &mdash; Data Engineer (5 years)</h4>
+                        <p class="text-gray-600 text-sm mt-1">Built analytics solutions for trading systems across global financial institutions, developing expertise in high-performance data processing.</p>
+                    </div>
+                </div>
+
+                <h3 class="text-xl font-semibold text-gray-900 mt-8">Education</h3>
+                <p class="mt-2">
+                    B.Sc Quantitative Finance, Dublin City University (First Class Honours)
+                </p>
+
+                <h3 class="text-xl font-semibold text-gray-900 mt-8">Certifications</h3>
+                <ul class="mt-2 space-y-2">
+                    <li class="flex items-start">
+                        <span class="text-green-600 font-bold mr-2">&#10003;</span>
+                        <span>AWS Solutions Architect</span>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-green-600 font-bold mr-2">&#10003;</span>
+                        <span>Databricks Certified Data Analyst</span>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-green-600 font-bold mr-2">&#10003;</span>
+                        <span>Databricks Certified Data Engineer</span>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-green-600 font-bold mr-2">&#10003;</span>
+                        <span>Databricks Certified Spark Developer</span>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-green-600 font-bold mr-2">&#10003;</span>
+                        <span>Qlik Sense Certified</span>
+                    </li>
+                </ul>
+
+                <p class="mt-6 text-gray-600">
+                    Based in Two Mile Borris, Co. Tipperary.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technologies & Tools -->
+    <section class="py-16 bg-gray-50">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-gray-900 mb-12 text-center">Technologies & Tools</h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-white p-6 rounded-lg shadow-sm">
+                    <h3 class="font-semibold text-gray-900 mb-3">Data Engineering</h3>
+                    <div class="flex flex-wrap gap-2">
+                        {['Databricks', 'Spark', 'Delta Lake', 'Polars'].map(tech => (
+                            <span class="bg-blue-50 text-blue-700 px-3 py-1 rounded-full text-sm">{tech}</span>
+                        ))}
+                    </div>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-sm">
+                    <h3 class="font-semibold text-gray-900 mb-3">Visualisation</h3>
+                    <div class="flex flex-wrap gap-2">
+                        {['Power BI', 'Qlik', 'D3'].map(tech => (
+                            <span class="bg-blue-50 text-blue-700 px-3 py-1 rounded-full text-sm">{tech}</span>
+                        ))}
+                    </div>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-sm">
+                    <h3 class="font-semibold text-gray-900 mb-3">Languages</h3>
+                    <div class="flex flex-wrap gap-2">
+                        {['Python', 'SQL', 'JavaScript', 'PowerShell'].map(tech => (
+                            <span class="bg-blue-50 text-blue-700 px-3 py-1 rounded-full text-sm">{tech}</span>
+                        ))}
+                    </div>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-sm">
+                    <h3 class="font-semibold text-gray-900 mb-3">Cloud</h3>
+                    <div class="flex flex-wrap gap-2">
+                        {['AWS', 'Docker', 'Kubernetes'].map(tech => (
+                            <span class="bg-blue-50 text-blue-700 px-3 py-1 rounded-full text-sm">{tech}</span>
+                        ))}
+                    </div>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-sm">
+                    <h3 class="font-semibold text-gray-900 mb-3">CI/CD</h3>
+                    <div class="flex flex-wrap gap-2">
+                        {['Jenkins', 'Ansible'].map(tech => (
+                            <span class="bg-blue-50 text-blue-700 px-3 py-1 rounded-full text-sm">{tech}</span>
+                        ))}
+                    </div>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-sm">
+                    <h3 class="font-semibold text-gray-900 mb-3">Web</h3>
+                    <div class="flex flex-wrap gap-2">
+                        {['React', 'GraphQL', 'Node.js'].map(tech => (
+                            <span class="bg-blue-50 text-blue-700 px-3 py-1 rounded-full text-sm">{tech}</span>
+                        ))}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <CTASection
+        heading="Let's Talk About What We Can Build Together"
+        text="Book a free 30-minute call. We'll discuss your challenges and explore how technology can help your business grow."
+        secondaryLabel="View Our Services"
+        secondaryHref="/services"
+    />
+
+    <Footer />
+</BaseLayout>
