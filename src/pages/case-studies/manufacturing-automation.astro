@@ -1,0 +1,181 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import CTASection from '../../components/CTASection.astro';
+import { breadcrumbSchema, articleSchema } from '../../data/structured-data';
+
+const breadcrumbs = breadcrumbSchema([
+  { name: 'Home', url: 'https://www.suirda.ie/' },
+  { name: 'Case Studies', url: 'https://www.suirda.ie/case-studies' },
+  { name: 'Manufacturing Automation', url: 'https://www.suirda.ie/case-studies/manufacturing-automation' },
+]);
+
+const article = articleSchema(
+  'Automated Production Reporting for a Tipperary Manufacturer',
+  'How we helped a Tipperary food manufacturer save 10 hours per week by automating production reporting with real-time dashboards and automated data pipelines.',
+  'https://www.suirda.ie/case-studies/manufacturing-automation',
+  '2026-03-01',
+);
+---
+
+<BaseLayout
+  title="Automated Production Reporting — Manufacturing Case Study"
+  description="How we helped a Tipperary food manufacturer save 10 hours per week by automating production reporting with real-time dashboards and automated data pipelines."
+  structuredData={[breadcrumbs, article]}
+>
+    <Header />
+
+    <!-- Breadcrumbs -->
+    <nav class="bg-white border-b border-gray-200">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
+            <ol class="flex items-center space-x-2 text-sm text-gray-500">
+                <li><a href="/" class="hover:text-blue-600 transition">Home</a></li>
+                <li>/</li>
+                <li><a href="/case-studies" class="hover:text-blue-600 transition">Case Studies</a></li>
+                <li>/</li>
+                <li class="text-gray-900 font-medium">Manufacturing Automation</li>
+            </ol>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="py-20 bg-gradient-to-br from-blue-50 to-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div class="text-blue-600 font-semibold mb-4">Manufacturing | Tipperary</div>
+            <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">Automated Production Reporting for a Tipperary Manufacturer</h1>
+            <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                How we replaced two days of manual reporting with real-time automated dashboards, saving 10 hours every week.
+            </p>
+        </div>
+    </section>
+
+    <!-- Overview Box -->
+    <section class="py-16 bg-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-blue-50 rounded-lg p-8">
+                <div class="grid md:grid-cols-4 gap-6 text-center">
+                    <div>
+                        <div class="text-sm font-semibold text-blue-600 uppercase tracking-wide mb-1">Client</div>
+                        <div class="text-gray-900 font-medium">Food manufacturing company, Tipperary</div>
+                    </div>
+                    <div>
+                        <div class="text-sm font-semibold text-blue-600 uppercase tracking-wide mb-1">Industry</div>
+                        <div class="text-gray-900 font-medium">Manufacturing</div>
+                    </div>
+                    <div>
+                        <div class="text-sm font-semibold text-blue-600 uppercase tracking-wide mb-1">Timeline</div>
+                        <div class="text-gray-900 font-medium">6 weeks</div>
+                    </div>
+                    <div>
+                        <div class="text-sm font-semibold text-blue-600 uppercase tracking-wide mb-1">Key Result</div>
+                        <div class="text-green-600 font-bold text-lg">10 hours/week saved</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- The Challenge -->
+    <section class="py-16 bg-gray-50">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-gray-900 mb-8">The Challenge</h2>
+            <div class="space-y-6 text-gray-700 leading-relaxed">
+                <p>
+                    A mid-sized food manufacturer in Tipperary was drowning in manual reporting. Production data was scattered across multiple systems -- machine outputs in one place, quality metrics in spreadsheets, inventory in a legacy system. The operations manager spent two full days each month compiling reports for management, manually pulling numbers from each source and formatting them into presentations.
+                </p>
+                <p>
+                    Weekly production summaries took half a day. Real-time visibility into production performance was non-existent -- by the time reports were ready, the data was already stale. Errors crept in through manual data entry, and the team had no confidence in the accuracy of their own numbers.
+                </p>
+                <p>
+                    The lack of timely, accurate data was affecting decision-making at every level. Production line issues that should have been caught in hours were going unnoticed for days. Inventory discrepancies between the system and reality led to emergency orders and production delays. Management meetings were spent debating the numbers rather than making decisions based on them.
+                </p>
+                <p>
+                    The operations team knew they needed to modernise their reporting, but they didn't have the in-house technical expertise to connect their disparate systems or build the automation they needed. Previous attempts to solve the problem with spreadsheet macros had created brittle solutions that broke regularly and still required significant manual intervention.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Solution -->
+    <section class="py-16 bg-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-gray-900 mb-8">Our Solution</h2>
+            <div class="space-y-6 text-gray-700 leading-relaxed">
+                <p>
+                    We started with a 2-week discovery phase, mapping every data source and reporting requirement. We sat with the operations team, watched their reporting process end-to-end, and documented every manual step, data source, and output. This gave us a clear picture of what needed to be automated and where the biggest time savings would come from.
+                </p>
+                <p>
+                    Then we built an automated data ingestion pipeline that connects directly to the production systems, quality databases, and inventory management software. Data flows automatically into a centralised data warehouse, where it's cleaned, validated, and structured for reporting. The pipeline runs on a schedule -- production data refreshes every 15 minutes during operating hours, with full daily reconciliation overnight.
+                </p>
+                <p>
+                    We built a suite of Power BI dashboards providing real-time visibility into production output, quality metrics, inventory levels, and equipment utilisation. Daily, weekly, and monthly reports now generate automatically and land in stakeholders' inboxes on schedule. The operations manager can check live KPIs on their phone at any time -- no more waiting for someone to compile the numbers.
+                </p>
+                <p>
+                    We also integrated data reconciliation checks -- the system automatically flags discrepancies between sources, giving management confidence that the numbers they're seeing are accurate and up to date. When the inventory system says there are 500 units of a product but the production log shows only 480 were produced, the system raises an alert immediately rather than letting the discrepancy go unnoticed for weeks.
+                </p>
+                <p>
+                    The solution was designed to be maintainable and extensible. We trained the operations team on the dashboard interface and created documentation for common adjustments. As the business evolves, new data sources and reports can be added to the existing framework without rebuilding from scratch.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Results -->
+    <section class="py-16 bg-gray-50">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-gray-900 mb-12 text-center">Results</h2>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="bg-white p-6 rounded-lg shadow-sm text-center">
+                    <div class="text-3xl font-bold text-green-600 mb-2">10 hours/week</div>
+                    <p class="text-gray-600">Saved on manual reporting tasks</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-sm text-center">
+                    <div class="text-3xl font-bold text-green-600 mb-2">2 days &rarr; 2 hours</div>
+                    <p class="text-gray-600">Monthly report compilation time</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-sm text-center">
+                    <div class="text-3xl font-bold text-green-600 mb-2">24/7</div>
+                    <p class="text-gray-600">Real-time production visibility</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-sm text-center">
+                    <div class="text-3xl font-bold text-green-600 mb-2">100% reduction</div>
+                    <p class="text-gray-600">In reporting errors</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technologies Used -->
+    <section class="py-16 bg-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-gray-900 mb-8 text-center">Technologies Used</h2>
+            <div class="flex flex-wrap justify-center gap-3">
+                {['Python', 'SQL', 'Power BI', 'Automated ETL Pipelines', 'Cloud Hosting'].map(tech => (
+                    <span class="bg-blue-50 text-blue-700 px-4 py-2 rounded-full text-sm font-medium">{tech}</span>
+                ))}
+            </div>
+        </div>
+    </section>
+
+    <!-- Quote -->
+    <section class="py-16 bg-gray-50">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <blockquote class="border-l-4 border-blue-600 pl-8 py-4">
+                <p class="text-xl text-gray-700 italic leading-relaxed mb-4">
+                    "We went from spending two days a month on reports to having everything update automatically. The dashboard has become the first thing I check every morning."
+                </p>
+                <cite class="text-gray-600 font-semibold not-italic">&mdash; Operations Manager</cite>
+            </blockquote>
+        </div>
+    </section>
+
+    <CTASection
+        heading="Ready to Automate Your Reporting?"
+        text="Book a free 30-minute process review. We'll identify how automation can save your team hours every week."
+        secondaryLabel="View All Case Studies"
+        secondaryHref="/case-studies"
+    />
+
+    <Footer />
+</BaseLayout>
