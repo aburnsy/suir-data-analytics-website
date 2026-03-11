@@ -1,0 +1,122 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import CTASection from '../../components/CTASection.astro';
+import { breadcrumbSchema, serviceSchema } from '../../data/structured-data';
+
+const breadcrumbs = breadcrumbSchema([
+  { name: 'Home', url: 'https://www.suirda.ie/' },
+  { name: 'Services', url: 'https://www.suirda.ie/services' },
+  { name: 'Business Process Automation', url: 'https://www.suirda.ie/services/business-automation' },
+]);
+
+const service = serviceSchema(
+  'Business Process Automation',
+  'Eliminate manual data entry, automate reporting, and connect your systems. Business automation for SMEs in Tipperary, Kilkenny & Laois.',
+  'https://www.suirda.ie/services/business-automation',
+);
+---
+
+<BaseLayout
+  title="Business Process Automation"
+  description="Eliminate manual data entry, automate reporting, and connect your systems. Business automation for SMEs in Tipperary, Kilkenny & Laois. 10+ hours saved per week."
+  structuredData={[breadcrumbs, service]}
+>
+    <Header />
+
+    <!-- Hero -->
+    <section class="py-20 bg-gradient-to-br from-blue-50 to-white">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">Business Process Automation</h1>
+            <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                Stop wasting hours on repetitive manual tasks. We automate your workflows so your team can focus on what actually grows your business.
+            </p>
+        </div>
+    </section>
+
+    <!-- Common Challenges -->
+    <section class="py-16 bg-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-gray-900 mb-8 text-center">Common Challenges We Solve</h2>
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="bg-gray-50 p-6 rounded-lg">
+                    <h3 class="font-semibold text-gray-900 mb-2">Manual data entry between systems</h3>
+                    <p class="text-gray-600 text-sm">Staff copying data from one spreadsheet or system to another, wasting hours every week on tasks that should be automatic.</p>
+                </div>
+                <div class="bg-gray-50 p-6 rounded-lg">
+                    <h3 class="font-semibold text-gray-900 mb-2">Reports that take days to compile</h3>
+                    <p class="text-gray-600 text-sm">Pulling numbers from multiple sources, reformatting in Excel, and emailing around -- a process that should take minutes, not days.</p>
+                </div>
+                <div class="bg-gray-50 p-6 rounded-lg">
+                    <h3 class="font-semibold text-gray-900 mb-2">Manual order and invoice copying</h3>
+                    <p class="text-gray-600 text-sm">Orders arriving by email or phone and being manually keyed into your system, leading to errors and delays.</p>
+                </div>
+                <div class="bg-gray-50 p-6 rounded-lg">
+                    <h3 class="font-semibold text-gray-900 mb-2">No real-time business visibility</h3>
+                    <p class="text-gray-600 text-sm">You only know how the business is performing when someone manually runs the numbers -- by which point the data is already stale.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How We Help -->
+    <section class="py-16 bg-gray-50">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-gray-900 mb-8 text-center">How We Help</h2>
+            <div class="space-y-6 text-gray-700 leading-relaxed">
+                <p>
+                    We analyse your existing workflows end-to-end, identify the bottlenecks where time and money are being lost, and build automations that eliminate manual steps. Whether it's connecting your accounting software to your CRM, automating report generation, or building data pipelines that keep your dashboards up to date -- we make your systems work together seamlessly.
+                </p>
+                <p>
+                    Every engagement starts with a focused pilot project in the range of EUR 2k-5k. This lets you see real results and measurable ROI before committing to larger-scale automation. We prove the value first, then scale what works.
+                </p>
+                <p>
+                    With 14+ years of enterprise data engineering experience at organisations like Optum, JP Morgan, and Citi, we bring battle-tested automation expertise to local SMEs -- at a price point that makes sense for your business.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Typical Outcomes -->
+    <section class="py-16 bg-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-gray-900 mb-12 text-center">Typical Outcomes</h2>
+            <div class="grid md:grid-cols-3 gap-8 text-center">
+                <div class="bg-gray-50 p-6 rounded-lg">
+                    <div class="text-3xl font-bold text-blue-600 mb-2">10+ hrs/week</div>
+                    <p class="text-gray-600 text-sm">Staff time saved by eliminating manual data entry and repetitive tasks</p>
+                </div>
+                <div class="bg-gray-50 p-6 rounded-lg">
+                    <div class="text-3xl font-bold text-blue-600 mb-2">76% faster</div>
+                    <p class="text-gray-600 text-sm">Data refresh times achieved through automated pipeline optimisation</p>
+                </div>
+                <div class="bg-gray-50 p-6 rounded-lg">
+                    <div class="text-3xl font-bold text-blue-600 mb-2">95% reduction</div>
+                    <p class="text-gray-600 text-sm">In onboarding time through streamlined automated workflows</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technologies We Use -->
+    <section class="py-16 bg-gray-50">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-gray-900 mb-8 text-center">Technologies We Use</h2>
+            <div class="flex flex-wrap justify-center gap-3">
+                {['Python', 'Power Automate', 'Zapier', 'Custom APIs', 'Databricks', 'SQL', 'Power BI', 'Ansible'].map(tech => (
+                    <span class="bg-white px-4 py-2 rounded-full text-sm font-medium text-gray-700 border border-gray-200">{tech}</span>
+                ))}
+            </div>
+        </div>
+    </section>
+
+    <CTASection
+        heading="Let's Discuss Your Automation Needs"
+        text="Book a free 30-minute process review. We'll map your workflows and identify the biggest time-saving opportunities."
+        secondaryLabel="View All Services"
+        secondaryHref="/services"
+    />
+
+    <Footer />
+</BaseLayout>
