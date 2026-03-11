@@ -1,0 +1,122 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import CTASection from '../../components/CTASection.astro';
+import { breadcrumbSchema, serviceSchema } from '../../data/structured-data';
+
+const breadcrumbs = breadcrumbSchema([
+  { name: 'Home', url: 'https://www.suirda.ie/' },
+  { name: 'Services', url: 'https://www.suirda.ie/services' },
+  { name: 'Data Analytics & Reporting', url: 'https://www.suirda.ie/services/data-analytics' },
+]);
+
+const service = serviceSchema(
+  'Data Analytics & Reporting',
+  'Turn scattered data into clear dashboards and automated reports. Data analytics for SMEs in Tipperary, Kilkenny & Laois.',
+  'https://www.suirda.ie/services/data-analytics',
+);
+---
+
+<BaseLayout
+  title="Data Analytics & Reporting"
+  description="Turn scattered data into clear dashboards and automated reports. Data analytics for SMEs in Tipperary, Kilkenny & Laois. Enterprise-grade insights at SME prices."
+  structuredData={[breadcrumbs, service]}
+>
+    <Header />
+
+    <!-- Hero -->
+    <section class="py-20 bg-gradient-to-br from-blue-50 to-white">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">Data Analytics & Reporting</h1>
+            <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                Your data should be working for you, not sitting in silos. We turn scattered information into clear, actionable insights that drive better decisions.
+            </p>
+        </div>
+    </section>
+
+    <!-- Common Challenges -->
+    <section class="py-16 bg-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-gray-900 mb-8 text-center">Common Challenges We Solve</h2>
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="bg-gray-50 p-6 rounded-lg">
+                    <h3 class="font-semibold text-gray-900 mb-2">Data trapped in silos</h3>
+                    <p class="text-gray-600 text-sm">Sales data in one system, financial data in another, customer data in a third -- no unified view of how your business is really performing.</p>
+                </div>
+                <div class="bg-gray-50 p-6 rounded-lg">
+                    <h3 class="font-semibold text-gray-900 mb-2">No real-time visibility</h3>
+                    <p class="text-gray-600 text-sm">By the time someone compiles the numbers, they're already out of date. You're making decisions based on last week's or last month's data.</p>
+                </div>
+                <div class="bg-gray-50 p-6 rounded-lg">
+                    <h3 class="font-semibold text-gray-900 mb-2">Manual reporting takes days</h3>
+                    <p class="text-gray-600 text-sm">Someone spends hours every week pulling data from multiple sources, copying into Excel, formatting, and emailing reports around the business.</p>
+                </div>
+                <div class="bg-gray-50 p-6 rounded-lg">
+                    <h3 class="font-semibold text-gray-900 mb-2">Decisions based on gut feel, not data</h3>
+                    <p class="text-gray-600 text-sm">Without accessible, timely data, business decisions rely on intuition rather than evidence -- leading to missed opportunities and unnecessary risk.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How We Help -->
+    <section class="py-16 bg-gray-50">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-gray-900 mb-8 text-center">How We Help</h2>
+            <div class="space-y-6 text-gray-700 leading-relaxed">
+                <p>
+                    We integrate data from all your sources -- accounting software, CRM, spreadsheets, web platforms -- into a single, reliable data layer. From there, we build automated dashboards and KPI tracking that update in real time, giving you and your team instant visibility into what matters most.
+                </p>
+                <p>
+                    This isn't generic reporting. We design analytics around your specific business questions: Which products are most profitable? Where are customers dropping off? Which team members are most productive? You get the answers you need, when you need them, without waiting for someone to run the numbers.
+                </p>
+                <p>
+                    We've built enterprise-grade analytics at scale -- including top-5 dashboards out of 10,000+ at Optum, and high-performance data warehouses at JP Morgan. Now we bring that same rigour and expertise to SMEs in Tipperary, Kilkenny, and Laois, at a fraction of the enterprise cost.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Typical Outcomes -->
+    <section class="py-16 bg-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-gray-900 mb-12 text-center">Typical Outcomes</h2>
+            <div class="grid md:grid-cols-3 gap-8 text-center">
+                <div class="bg-gray-50 p-6 rounded-lg">
+                    <div class="text-3xl font-bold text-blue-600 mb-2">95% faster</div>
+                    <p class="text-gray-600 text-sm">Data processing reduced from 12 hours to 45 minutes through optimised pipelines</p>
+                </div>
+                <div class="bg-gray-50 p-6 rounded-lg">
+                    <div class="text-3xl font-bold text-blue-600 mb-2">8% improvement</div>
+                    <p class="text-gray-600 text-sm">In regulatory compliance KPIs through automated tracking and real-time monitoring</p>
+                </div>
+                <div class="bg-gray-50 p-6 rounded-lg">
+                    <div class="text-3xl font-bold text-blue-600 mb-2">Real-time insights</div>
+                    <p class="text-gray-600 text-sm">Replacing weekly manual reports with live dashboards updated automatically</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technologies We Use -->
+    <section class="py-16 bg-gray-50">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-gray-900 mb-8 text-center">Technologies We Use</h2>
+            <div class="flex flex-wrap justify-center gap-3">
+                {['Power BI', 'Databricks', 'Delta Lake', 'SQL', 'Python', 'Polars', 'Pandas', 'Cloud Data Warehouses'].map(tech => (
+                    <span class="bg-white px-4 py-2 rounded-full text-sm font-medium text-gray-700 border border-gray-200">{tech}</span>
+                ))}
+            </div>
+        </div>
+    </section>
+
+    <CTASection
+        heading="Let's Discuss Your Data Needs"
+        text="Book a free 30-minute call. We'll review your data landscape and identify the quickest path to actionable insights."
+        secondaryLabel="View All Services"
+        secondaryHref="/services"
+    />
+
+    <Footer />
+</BaseLayout>
