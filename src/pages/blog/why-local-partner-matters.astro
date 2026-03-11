@@ -1,0 +1,164 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import CTASection from '../../components/CTASection.astro';
+import { breadcrumbSchema, articleSchema } from '../../data/structured-data';
+
+const breadcrumbs = breadcrumbSchema([
+  { name: 'Home', url: 'https://www.suirda.ie/' },
+  { name: 'Blog', url: 'https://www.suirda.ie/blog' },
+  { name: 'Why Local Partner Matters', url: 'https://www.suirda.ie/blog/why-local-partner-matters' },
+]);
+
+const article = articleSchema(
+  'Why Local Matters When Choosing an Automation Partner',
+  'Dublin agencies, offshore teams, or the consultant down the road — here\'s why geography still matters when choosing a technology partner for your business.',
+  'https://www.suirda.ie/blog/why-local-partner-matters',
+  '2026-03-01',
+);
+---
+
+<BaseLayout
+  title="Why Local Matters When Choosing an Automation Partner"
+  description="Dublin agencies, offshore teams, or a local consultant? Why geography still matters when choosing an automation and software development partner for your SME."
+  structuredData={[breadcrumbs, article]}
+>
+    <Header />
+
+    <!-- Breadcrumbs -->
+    <nav class="bg-white border-b border-gray-200">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
+            <ol class="flex items-center space-x-2 text-sm text-gray-500">
+                <li><a href="/" class="hover:text-blue-600 transition">Home</a></li>
+                <li>/</li>
+                <li><a href="/blog" class="hover:text-blue-600 transition">Blog</a></li>
+                <li>/</li>
+                <li class="text-gray-900 font-medium">Why Local Partner Matters</li>
+            </ol>
+        </div>
+    </nav>
+
+    <!-- Article -->
+    <article class="py-16 bg-white">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+            <header class="mb-12">
+                <time class="text-sm text-gray-500">March 2026</time>
+                <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mt-2 mb-6 leading-tight">Why Local Matters When Choosing an Automation Partner</h1>
+                <p class="text-xl text-gray-600 leading-relaxed">
+                    Dublin agencies. Offshore teams. Or the consultant down the road. Here's why geography still matters when it comes to technology partnerships -- and why businesses in Tipperary, Kilkenny, and Laois deserve better options.
+                </p>
+            </header>
+
+            <div class="space-y-8 text-gray-700 leading-relaxed text-lg">
+
+                <h2 class="text-2xl font-bold text-gray-900 pt-4">The Three Options</h2>
+                <p>
+                    When a regional SME decides to invest in automation or custom software, the options usually look like this: find a Dublin agency, hire an offshore team, or -- if they're lucky -- find someone local. Each option comes with trade-offs, and the cheapest quote isn't always the best value.
+                </p>
+                <p>
+                    Let's look at each honestly.
+                </p>
+
+                <h2 class="text-2xl font-bold text-gray-900 pt-4">The Dublin Agency Reality</h2>
+                <p>
+                    Dublin agencies are excellent at what they do. They have talented teams, polished processes, and impressive client lists. But their cost structure reflects Dublin's reality -- high office rents, high salaries, and the overhead of running a multi-person operation in one of Europe's most expensive cities.
+                </p>
+                <p>
+                    <strong>Typical rates:</strong> EUR 150-250 per hour. Minimum project sizes often start at EUR 20,000 or more. Some agencies won't take a project under EUR 50,000.
+                </p>
+                <p>
+                    For a regional SME, this creates several problems. First, the budget doesn't stretch as far -- a EUR 10k project buys 40-65 hours at Dublin rates, which isn't much once you account for project management, meetings, and the inevitable scope discussions. Second, your project is one of many in their pipeline. You're a small fish in a big pond, and your priority ranking reflects that.
+                </p>
+                <p>
+                    Third -- and this is the subtle one -- Dublin agencies serve Dublin clients. Their frame of reference is Dublin-scale businesses, Dublin-scale budgets, and Dublin-scale problems. They may not fully understand the dynamics of running a 20-person manufacturing company in Tipperary or a retail business in Kilkenny's high street. They'll build what you ask for, but they might not ask the right questions to understand what you actually need.
+                </p>
+                <p>
+                    There's also the practical matter of meetings. A face-to-face meeting with a Dublin agency means a half-day trip. Over the course of a project, that adds up -- in time, in travel costs, and in the friction of coordinating schedules across distance.
+                </p>
+
+                <h2 class="text-2xl font-bold text-gray-900 pt-4">The Offshore Reality</h2>
+                <p>
+                    Offshore development looks attractive on paper. Rates of EUR 30-60 per hour mean your EUR 10k budget stretches to 165-330 hours -- three to five times what you'd get from a Dublin agency. Platforms like Upwork and Toptal make it easy to find developers with impressive CVs and portfolios.
+                </p>
+                <p>
+                    But the reality is often more complicated than the promise.
+                </p>
+                <p>
+                    <strong>Timezone issues:</strong> When your developer is 5-8 hours ahead or behind, real-time communication becomes difficult. Questions that would take 5 minutes in a meeting take a day via email. Simple misunderstandings compound over time because there's no quick way to clarify.
+                </p>
+                <p>
+                    <strong>Communication barriers:</strong> This isn't about language ability -- many offshore developers speak excellent English. It's about context. Explaining your business processes, your customer expectations, and your operational constraints is hard enough face-to-face. Doing it through Zoom calls with patchy connections and cultural gaps adds friction to every conversation.
+                </p>
+                <p>
+                    <strong>No understanding of Irish business context:</strong> An offshore developer has no frame of reference for Irish regulatory requirements, customer expectations, or business culture. They won't know that your customers expect to be able to call and talk to someone, or that GDPR compliance needs to be baked into every data-handling decision, or that your seasonal patterns follow Irish school holidays and bank holiday weekends.
+                </p>
+                <p>
+                    <strong>Hard to maintain:</strong> The biggest risk with offshore development is what happens after launch. The developer moves on to their next project. When something breaks at 2pm on a Tuesday -- during their night-time -- you're waiting until tomorrow for a response. And if the original developer isn't available, a new developer needs to understand the entire codebase before they can fix anything.
+                </p>
+
+                <h2 class="text-2xl font-bold text-gray-900 pt-4">The Local Consultant Advantage</h2>
+                <p>
+                    A local consultant combines the expertise of an agency with the accessibility and cost-efficiency that offshore promises but rarely delivers. Here's what local actually means in practice:
+                </p>
+                <p>
+                    <strong>Face-to-face meetings:</strong> Not a video call where half the time is spent on "can you hear me?" -- an actual meeting. Sitting in your office. Watching how your team works. Seeing the whiteboard with your processes scribbled on it. Understanding the physical reality of your business, not just the description of it.
+                </p>
+                <p>
+                    <strong>Understanding of regional business challenges:</strong> A local consultant understands that your customers are local, your supply chains are regional, your team lives nearby, and your business rhythm follows the patterns of rural and town-based Ireland. They understand that a farming client's busy season looks different from a retailer's, and that "we need this before the mart on Tuesday" is a real deadline.
+                </p>
+                <p>
+                    <strong>Same timezone and availability:</strong> When something needs discussing, you pick up the phone. No scheduling across timezones, no waiting for someone's morning, no missed messages because of a bank holiday you didn't know about. Availability when you need it, not when a distant calendar permits.
+                </p>
+                <p>
+                    <strong>Ongoing relationship, not project-and-disappear:</strong> A local consultant is invested in the community. Their reputation depends on every project they deliver, because their clients talk to each other. The business owner you built a system for last year knows the business owner considering a project this year. That accountability drives a level of care that a remote team, however competent, simply can't match.
+                </p>
+                <p>
+                    <strong>Competitive rates:</strong> Without Dublin office overheads, local consultants can offer rates that are significantly more affordable while still delivering enterprise-quality work. Your EUR 10k stretches further, and the results are better because there's less friction in the process.
+                </p>
+
+                <h2 class="text-2xl font-bold text-gray-900 pt-4">Why Tipperary, Kilkenny & Laois Specifically</h2>
+                <p>
+                    These three counties represent some of Ireland's most dynamic regional economies. There are manufacturing businesses in Tipperary competing nationally and internationally. Retailers in Kilkenny serving both locals and the thriving tourist trade. Professional services firms in Laois growing rapidly as businesses and families move to the region.
+                </p>
+                <p>
+                    These businesses are ambitious, growing, and increasingly sophisticated in their operations. They deserve access to the same calibre of technology expertise that's available in Dublin -- but delivered locally, at a price point that reflects regional economics, and by someone who genuinely understands their market.
+                </p>
+                <p>
+                    For too long, regional businesses have had to choose between expensive Dublin agencies that don't understand them, cheap offshore teams that can't support them, or going without. There's a better option: enterprise-grade expertise, delivered locally, at a fair price.
+                </p>
+
+                <h2 class="text-2xl font-bold text-gray-900 pt-4">What to Look for in a Local Technology Partner</h2>
+                <p>
+                    If you're considering working with a local consultant or small agency, here's what to look for:
+                </p>
+                <ul class="list-disc pl-6 space-y-3">
+                    <li><strong>Proven enterprise experience:</strong> The best local consultants aren't people who've only worked locally. They're experienced professionals who've worked at major organisations and chosen to bring that expertise back to the regions. Ask about their background -- where they've worked, what they've built, and what scale of systems they've delivered.</li>
+                    <li><strong>Willingness to start small:</strong> A good partner will encourage you to start with a focused pilot rather than pushing for a large upfront commitment. If someone insists on a EUR 20k minimum project, they're thinking about their pipeline, not your risk.</li>
+                    <li><strong>Clear communication:</strong> Can they explain technical concepts in plain language? Do they listen more than they talk? Do they ask questions about your business before proposing solutions? Technology is a means to an end -- your partner should be focused on the business outcome, not the technology.</li>
+                    <li><strong>References from similar businesses:</strong> Ask to speak with previous clients, ideally businesses similar to yours in size and industry. The work they've done for others is the best predictor of what they'll do for you.</li>
+                    <li><strong>Transparent pricing:</strong> No vague estimates, no "we'll figure it out as we go." A clear scope, a clear price, and a clear timeline. If they can't tell you what your money buys, walk away.</li>
+                </ul>
+
+                <h2 class="text-2xl font-bold text-gray-900 pt-4">The Bottom Line</h2>
+                <p>
+                    Geography still matters. Not because technology can't be delivered remotely -- it absolutely can. But because the best technology solutions come from deeply understanding the business they serve. And that understanding comes from proximity, from shared context, and from a relationship that extends beyond a Zoom call and a Slack channel.
+                </p>
+                <p>
+                    Businesses in Tipperary, Kilkenny, and Laois are growing, competing, and investing in their future. They deserve a technology partner who's growing alongside them -- someone who's local, accessible, and genuinely invested in their success.
+                </p>
+            </div>
+        </div>
+    </article>
+
+    <CTASection
+        heading="Let's Talk About Your Business"
+        text="Book a free 30-minute call. No sales pitch -- just an honest conversation about your challenges and how technology can help."
+        primaryLabel="Book Your Free Consultation"
+        primaryHref="https://calendly.com/andy_burns/30min"
+        secondaryLabel="Learn About Us"
+        secondaryHref="/about"
+    />
+
+    <Footer />
+</BaseLayout>
