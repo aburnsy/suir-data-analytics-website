@@ -1,0 +1,192 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import CTASection from '../../components/CTASection.astro';
+import { breadcrumbSchema, articleSchema } from '../../data/structured-data';
+
+const breadcrumbs = breadcrumbSchema([
+  { name: 'Home', url: 'https://www.suirda.ie/' },
+  { name: 'Blog', url: 'https://www.suirda.ie/blog' },
+  { name: 'What EUR 10k Buys in Custom Software', url: 'https://www.suirda.ie/blog/what-10k-buys-custom-software' },
+]);
+
+const article = articleSchema(
+  'Real Cost Breakdown: What €10k Buys in Custom Software',
+  'Transparent pricing for custom software development in Ireland. What you get at every budget level from €5k to €50k+.',
+  'https://www.suirda.ie/blog/what-10k-buys-custom-software',
+  '2026-03-01',
+);
+---
+
+<BaseLayout
+  title="Real Cost Breakdown: What €10k Buys in Custom Software"
+  description="Transparent custom software pricing for Irish SMEs. What you get at every budget level from €5k to €50k+, what's included, and why phased development works."
+  structuredData={[breadcrumbs, article]}
+>
+    <Header />
+
+    <!-- Breadcrumbs -->
+    <nav class="bg-white border-b border-gray-200">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
+            <ol class="flex items-center space-x-2 text-sm text-gray-500">
+                <li><a href="/" class="hover:text-blue-600 transition">Home</a></li>
+                <li>/</li>
+                <li><a href="/blog" class="hover:text-blue-600 transition">Blog</a></li>
+                <li>/</li>
+                <li class="text-gray-900 font-medium">What EUR 10k Buys in Custom Software</li>
+            </ol>
+        </div>
+    </nav>
+
+    <!-- Article -->
+    <article class="py-16 bg-white">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+            <header class="mb-12">
+                <time class="text-sm text-gray-500">March 2026</time>
+                <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mt-2 mb-6 leading-tight">Real Cost Breakdown: What EUR 10k Buys in Custom Software</h1>
+                <p class="text-xl text-gray-600 leading-relaxed">
+                    Transparent pricing for a notoriously opaque industry. We break down exactly what you get at every budget level, what's included, and why starting small is almost always the smartest move.
+                </p>
+            </header>
+
+            <div class="space-y-8 text-gray-700 leading-relaxed text-lg">
+
+                <h2 class="text-2xl font-bold text-gray-900 pt-4">Why Software Pricing Is Opaque (and Why It Shouldn't Be)</h2>
+                <p>
+                    Ask three software developers what a project will cost and you'll get three wildly different answers. One quotes EUR 3,000, another EUR 30,000, and the third says "it depends" and asks for a two-week discovery phase before giving you a number.
+                </p>
+                <p>
+                    This opacity exists because software projects genuinely vary in complexity, but also because the industry benefits from keeping pricing mysterious. Vague pricing makes it easier to upsell, harder for clients to compare, and impossible for businesses to budget with confidence.
+                </p>
+                <p>
+                    We think that's wrong. If you're considering custom software for your business, you deserve to know what your money buys before you spend it. So here's our honest breakdown of what different budget levels actually get you.
+                </p>
+
+                <h2 class="text-2xl font-bold text-gray-900 pt-4">What EUR 5k Gets You: A Focused Single-Purpose Tool</h2>
+                <p>
+                    At this budget, you're building one thing that does one job exceptionally well. This is the sweet spot for a first project -- it's enough to build something genuinely useful while keeping the investment low enough that the risk is minimal.
+                </p>
+                <p>
+                    <strong>Real examples at this level:</strong>
+                </p>
+                <ul class="list-disc pl-6 space-y-3">
+                    <li><strong>Online booking system:</strong> Customer-facing booking page, automatic confirmation and reminder emails, admin calendar view, integration with your existing calendar.</li>
+                    <li><strong>Automated reporting dashboard:</strong> Connects to 2-3 data sources, builds automated reports, provides a live dashboard with key metrics, scheduled email reports to stakeholders.</li>
+                    <li><strong>Customer intake form with workflow:</strong> Branded online form, automatic document requests, status tracking, integration with your practice management or CRM system.</li>
+                </ul>
+                <p>
+                    At EUR 5k, the scope is deliberately tight. We solve one problem completely rather than half-solving three. This focus is what makes the investment worthwhile -- you get a finished, working tool that delivers value from day one.
+                </p>
+
+                <h2 class="text-2xl font-bold text-gray-900 pt-4">What EUR 10k Gets You: A Feature-Rich Application</h2>
+                <p>
+                    At EUR 10k, you can build something more substantial -- a proper application with multiple features that work together as a cohesive system.
+                </p>
+                <p>
+                    <strong>Real examples at this level:</strong>
+                </p>
+                <ul class="list-disc pl-6 space-y-3">
+                    <li><strong>Customer portal:</strong> User authentication and accounts, personalised dashboard for each customer, booking functionality, notification system (email and in-app), admin panel for managing customers and content.</li>
+                    <li><strong>Complete automation suite:</strong> 3-4 connected workflow automations, data pipeline connecting multiple systems, reporting dashboard with real-time data, automated alerts and notifications for exceptions.</li>
+                    <li><strong>Internal operations tool:</strong> Project tracking with task assignment, time logging and reporting, client management with communication history, document storage and sharing.</li>
+                </ul>
+                <p>
+                    This is where the power of custom really starts to show. At EUR 10k, the system is built around your specific processes, integrates with your existing tools, and eliminates multiple manual steps rather than just one. It's not a generic tool that you adapt to -- it's a tool that's adapted to you.
+                </p>
+
+                <h2 class="text-2xl font-bold text-gray-900 pt-4">What EUR 25k Gets You: A Multi-User Platform</h2>
+                <p>
+                    At this level, you're building a platform -- something that serves multiple user types (customers, staff, managers) with different views, permissions, and functionality for each.
+                </p>
+                <p>
+                    <strong>Real examples at this level:</strong>
+                </p>
+                <ul class="list-disc pl-6 space-y-3">
+                    <li><strong>Custom CRM:</strong> Tailored to your specific sales process, with pipeline management, customer communication tracking, automated follow-ups, reporting by rep/region/product, and integration with your accounting and marketing tools.</li>
+                    <li><strong>Inventory management system:</strong> Multi-location stock tracking, supplier integration with automated ordering, barcode/QR scanning, real-time stock levels, demand forecasting based on historical data.</li>
+                    <li><strong>Multi-location management tool:</strong> Centralised dashboard across locations, role-based access (staff, managers, owners), standardised workflows, performance comparison, consolidated reporting.</li>
+                </ul>
+
+                <h2 class="text-2xl font-bold text-gray-900 pt-4">What EUR 50k+ Gets You: Enterprise-Grade Systems</h2>
+                <p>
+                    Above EUR 50k, you're building complex systems that serve as the backbone of your business operations.
+                </p>
+                <p>
+                    <strong>Real examples at this level:</strong>
+                </p>
+                <ul class="list-disc pl-6 space-y-3">
+                    <li><strong>Full business management platform:</strong> An integrated system covering sales, operations, HR, and finance -- purpose-built for your industry and processes.</li>
+                    <li><strong>Marketplace or platform:</strong> A multi-sided platform connecting buyers and sellers, with payments, messaging, reviews, and dispute resolution.</li>
+                    <li><strong>Complex multi-system integration:</strong> Connecting 5+ existing systems into a unified data layer with automated workflows, comprehensive reporting, and predictive analytics.</li>
+                </ul>
+                <p>
+                    Projects at this scale are rare for regional SMEs, but they exist -- particularly for businesses that have outgrown every off-the-shelf option and need a system that matches their unique scale and complexity.
+                </p>
+
+                <h2 class="text-2xl font-bold text-gray-900 pt-4">What's Included at Every Level</h2>
+                <p>
+                    Regardless of the budget, every project includes the same core phases:
+                </p>
+                <ul class="list-disc pl-6 space-y-3">
+                    <li><strong>Discovery and planning:</strong> We map your requirements, define the scope, and agree on exactly what will be built. No surprises.</li>
+                    <li><strong>Design:</strong> User interface design and workflow mapping. You see and approve designs before any code is written.</li>
+                    <li><strong>Development:</strong> The actual build, with regular progress updates and opportunities to provide feedback.</li>
+                    <li><strong>Testing:</strong> Thorough testing across devices and scenarios. We don't ship until it works reliably.</li>
+                    <li><strong>Deployment:</strong> Set up on production infrastructure, configured and optimised for real-world use.</li>
+                    <li><strong>Training:</strong> Hands-on training for your team so they're confident using the system from day one.</li>
+                    <li><strong>30 days support:</strong> Post-launch support to handle any issues, answer questions, and make minor adjustments as your team gets comfortable.</li>
+                </ul>
+
+                <h2 class="text-2xl font-bold text-gray-900 pt-4">Why Phased Development Works</h2>
+                <p>
+                    We almost always recommend starting at the EUR 5k level, even if you know you'll eventually need a EUR 25k system. Here's why:
+                </p>
+                <p>
+                    <strong>Prove the value first.</strong> A EUR 5k project that saves you 10 hours per week proves that the approach works for your business. It's hard to justify EUR 25k on a hunch. It's easy to justify it when you've already seen EUR 5k deliver measurable ROI.
+                </p>
+                <p>
+                    <strong>Refine your requirements.</strong> What you think you need before the first project and what you actually need after using it for a month are often different. Starting small lets you learn and adjust before committing a larger budget.
+                </p>
+                <p>
+                    <strong>Build confidence.</strong> Working with a new technology partner is a relationship. Starting with a smaller project lets both sides build trust and establish working patterns before tackling something complex.
+                </p>
+                <p>
+                    <strong>Manage cash flow.</strong> Spreading the investment over multiple phases means you're never committing more than you're comfortable with. Each phase is a decision point -- continue, adjust, or pause based on results.
+                </p>
+
+                <h2 class="text-2xl font-bold text-gray-900 pt-4">What About Ongoing Costs?</h2>
+                <p>
+                    After the build is complete, there are ongoing costs to keep your system running:
+                </p>
+                <ul class="list-disc pl-6 space-y-3">
+                    <li><strong>Cloud hosting:</strong> EUR 20-200 per month depending on the size and complexity of the system.</li>
+                    <li><strong>Software licenses:</strong> Any third-party tools (Power BI, database services, etc.) at their published rates.</li>
+                    <li><strong>Maintenance and updates:</strong> Optional but recommended. A small monthly retainer (typically EUR 200-500) covers security updates, bug fixes, minor enhancements, and priority support.</li>
+                </ul>
+                <p>
+                    Total ongoing costs for a typical EUR 10k project: EUR 100-400 per month. Compared to the labour cost of the manual processes it replaces, this is almost always a fraction of the savings.
+                </p>
+
+                <h2 class="text-2xl font-bold text-gray-900 pt-4">The Bottom Line</h2>
+                <p>
+                    Custom software doesn't have to be expensive or risky. Start at EUR 5k with a focused tool that solves your biggest pain point. See the results. Then decide whether to invest more. The phased approach means you're always in control, always seeing value, and never over-committing.
+                </p>
+                <p>
+                    If you're curious about what a custom project would look like for your business, we're happy to scope it out in a free 30-minute call. No commitment, no hard sell -- just an honest assessment of what's possible at your budget.
+                </p>
+            </div>
+        </div>
+    </article>
+
+    <CTASection
+        heading="Want to Know What Your Project Would Cost?"
+        text="Book a free 30-minute call. We'll discuss your requirements and give you a realistic estimate -- no obligation, no vague 'it depends' answers."
+        primaryLabel="Book Your Free Consultation"
+        primaryHref="https://calendly.com/andy_burns/30min"
+        secondaryLabel="View Custom Software Services"
+        secondaryHref="/services/custom-software"
+    />
+
+    <Footer />
+</BaseLayout>
