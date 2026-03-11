@@ -1,0 +1,49 @@
+---
+interface Props {
+  heading: string;
+  text: string;
+  primaryLabel?: string;
+  primaryHref?: string;
+  secondaryLabel?: string;
+  secondaryHref?: string;
+  bgClass?: string;
+}
+
+const {
+  heading,
+  text,
+  primaryLabel = 'Book Your Free Process Review',
+  primaryHref = 'https://calendly.com/andy_burns/30min',
+  secondaryLabel,
+  secondaryHref,
+  bgClass = 'bg-white',
+} = Astro.props;
+---
+
+<section class:list={['py-20', bgClass]}>
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h2 class="text-3xl font-bold text-gray-900 mb-6">{heading}</h2>
+        <p class="text-xl text-gray-600 mb-8">{text}</p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <a
+                href={primaryHref}
+                target={primaryHref.startsWith('http') ? '_blank' : undefined}
+                rel={primaryHref.startsWith('http') ? 'noopener noreferrer' : undefined}
+                class="bg-blue-600 text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-blue-700 transition"
+            >
+                {primaryLabel}
+            </a>
+            {secondaryLabel && secondaryHref && (
+                <a
+                    href={secondaryHref}
+                    class="bg-white text-blue-600 px-8 py-4 rounded-lg text-lg font-semibold border-2 border-blue-600 hover:bg-blue-50 transition"
+                >
+                    {secondaryLabel}
+                </a>
+            )}
+        </div>
+        <p class="text-gray-500 mt-4">
+            Or email us: <a href="mailto:andy@suirda.ie" class="text-blue-600 hover:underline">andy@suirda.ie</a>
+        </p>
+    </div>
+</section>
