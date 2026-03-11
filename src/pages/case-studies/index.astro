@@ -1,0 +1,83 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import CaseStudyCard from '../../components/CaseStudyCard.astro';
+import CTASection from '../../components/CTASection.astro';
+import { breadcrumbSchema } from '../../data/structured-data';
+
+const breadcrumbs = breadcrumbSchema([
+  { name: 'Home', url: 'https://www.suirda.ie/' },
+  { name: 'Case Studies', url: 'https://www.suirda.ie/case-studies' },
+]);
+---
+
+<BaseLayout
+  title="Case Studies — Real Results for Regional SMEs"
+  description="See how SMEs in Tipperary, Kilkenny, and Laois have saved time, reduced costs, and grown through automation, custom software, and data analytics."
+  structuredData={breadcrumbs}
+>
+    <Header />
+
+    <!-- Breadcrumbs -->
+    <nav class="bg-white border-b border-gray-200">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
+            <ol class="flex items-center space-x-2 text-sm text-gray-500">
+                <li><a href="/" class="hover:text-blue-600 transition">Home</a></li>
+                <li>/</li>
+                <li class="text-gray-900 font-medium">Case Studies</li>
+            </ol>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="py-20 bg-gradient-to-br from-blue-50 to-white">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">Real Results for Regional SMEs</h1>
+            <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                We measure success by outcomes, not outputs. Here's how we've helped businesses across Tipperary, Kilkenny, and Laois save time, reduce costs, and grow.
+            </p>
+        </div>
+    </section>
+
+    <!-- Case Studies Grid -->
+    <section class="py-16 bg-white">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-3 gap-8">
+                <CaseStudyCard
+                    category="Manufacturing"
+                    location="Tipperary"
+                    title="Automated Production Reporting"
+                    summary="Built automated dashboards pulling data from production systems, cutting monthly reporting from 2 days to 2 hours."
+                    metric="10 hours/week saved"
+                    href="/case-studies/manufacturing-automation"
+                />
+                <CaseStudyCard
+                    category="Retail"
+                    location="Kilkenny"
+                    title="Custom Loyalty & Booking System"
+                    summary="Developed a custom loyalty program integrated with POS, enabling targeted promotions and online booking."
+                    metric="25% increase in repeat business"
+                    href="/case-studies/retail-software"
+                />
+                <CaseStudyCard
+                    category="Professional Services"
+                    location="Laois"
+                    title="Client Onboarding Automation"
+                    summary="Automated workflow from enquiry to contract to project kickoff, eliminating manual handoffs and email chasing."
+                    metric="2 weeks → 3 days"
+                    href="/case-studies/professional-services"
+                />
+            </div>
+        </div>
+    </section>
+
+    <CTASection
+        heading="Ready to Get Results Like These?"
+        text="Book a free 30-minute process review. We'll identify the biggest opportunities to save time and money in your business."
+        secondaryLabel="View Our Services"
+        secondaryHref="/services"
+    />
+
+    <Footer />
+</BaseLayout>
