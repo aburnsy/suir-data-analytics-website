@@ -20,7 +20,7 @@ const breadcrumbs = breadcrumbSchema([
     <Header />
 
     <!-- Breadcrumbs -->
-    <nav class="bg-white border-b border-gray-200">
+    <nav class="bg-white border-b border-gray-200" aria-label="Breadcrumb">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
             <ol class="flex items-center space-x-2 text-sm text-gray-500">
                 <li><a href="/" class="hover:text-blue-600 transition">Home</a></li>
@@ -43,6 +43,7 @@ const breadcrumbs = breadcrumbSchema([
     <!-- Case Studies Grid -->
     <section class="py-16 bg-white">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-center text-gray-900 mb-12">Our Case Studies</h2>
             <div class="grid md:grid-cols-3 gap-8">
                 <CaseStudyCard
                     category="Manufacturing"
