@@ -1,0 +1,184 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import CTASection from '../../components/CTASection.astro';
+import { breadcrumbSchema, articleSchema } from '../../data/structured-data';
+
+const breadcrumbs = breadcrumbSchema([
+  { name: 'Home', url: 'https://www.suirda.ie/' },
+  { name: 'Case Studies', url: 'https://www.suirda.ie/case-studies' },
+  { name: 'Professional Services', url: 'https://www.suirda.ie/case-studies/professional-services' },
+]);
+
+const article = articleSchema(
+  'Client Onboarding Automation for a Laois Professional Services Firm',
+  'How we automated client onboarding for a Laois accounting firm, reducing the process from 2 weeks to 3 days with zero missed compliance steps.',
+  'https://www.suirda.ie/case-studies/professional-services',
+  '2026-03-01',
+);
+---
+
+<BaseLayout
+  title="Client Onboarding Automation — Professional Services Case Study"
+  description="How we automated client onboarding for a Laois accounting firm, reducing the process from 2 weeks to 3 days with zero missed compliance steps."
+  structuredData={[breadcrumbs, article]}
+>
+    <Header />
+
+    <!-- Breadcrumbs -->
+    <nav class="bg-white border-b border-gray-200">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
+            <ol class="flex items-center space-x-2 text-sm text-gray-500">
+                <li><a href="/" class="hover:text-blue-600 transition">Home</a></li>
+                <li>/</li>
+                <li><a href="/case-studies" class="hover:text-blue-600 transition">Case Studies</a></li>
+                <li>/</li>
+                <li class="text-gray-900 font-medium">Professional Services</li>
+            </ol>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="py-20 bg-gradient-to-br from-blue-50 to-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div class="text-blue-600 font-semibold mb-4">Professional Services | Laois</div>
+            <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">Client Onboarding Automation for a Laois Professional Services Firm</h1>
+            <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                How we cut client onboarding from two weeks to three days while eliminating every missed compliance step.
+            </p>
+        </div>
+    </section>
+
+    <!-- Overview Box -->
+    <section class="py-16 bg-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-blue-50 rounded-lg p-8">
+                <div class="grid md:grid-cols-4 gap-6 text-center">
+                    <div>
+                        <div class="text-sm font-semibold text-blue-600 uppercase tracking-wide mb-1">Client</div>
+                        <div class="text-gray-900 font-medium">Professional services firm, Laois</div>
+                    </div>
+                    <div>
+                        <div class="text-sm font-semibold text-blue-600 uppercase tracking-wide mb-1">Industry</div>
+                        <div class="text-gray-900 font-medium">Professional Services</div>
+                    </div>
+                    <div>
+                        <div class="text-sm font-semibold text-blue-600 uppercase tracking-wide mb-1">Timeline</div>
+                        <div class="text-gray-900 font-medium">5 weeks</div>
+                    </div>
+                    <div>
+                        <div class="text-sm font-semibold text-blue-600 uppercase tracking-wide mb-1">Key Result</div>
+                        <div class="text-green-600 font-bold text-lg">2 weeks &rarr; 3 days</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- The Challenge -->
+    <section class="py-16 bg-gray-50">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-gray-900 mb-8">The Challenge</h2>
+            <div class="space-y-6 text-gray-700 leading-relaxed">
+                <p>
+                    A professional services firm in Laois -- offering accounting and consulting services -- was losing time and clients through a chaotic onboarding process. New client intake involved multiple email exchanges to collect documents, manual data entry into their practice management system, compliance checks tracked in spreadsheets, and follow-up reminders sent manually by the admin team.
+                </p>
+                <p>
+                    The process took an average of two weeks from initial enquiry to a fully onboarded client. Documents went missing in email threads, compliance steps were occasionally missed, and the admin team spent hours chasing clients for paperwork. The longer the process dragged on, the more likely it was that something fell through the cracks.
+                </p>
+                <p>
+                    Two prospective clients had walked away in the past year, citing the slow onboarding as a reason. In a competitive market where first impressions matter, losing clients before they'd even started was a painful and entirely avoidable problem.
+                </p>
+                <p>
+                    The firm's partners knew the process was broken, but the admin team was already stretched thin. They didn't have the bandwidth to redesign the workflow on top of their existing workload, and they didn't know where to start with automation. Every time they tried to improve the process by adding more checklists and templates, it just added more manual steps for an already overwhelmed team.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Solution -->
+    <section class="py-16 bg-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-gray-900 mb-8">Our Solution</h2>
+            <div class="space-y-6 text-gray-700 leading-relaxed">
+                <p>
+                    We built an automated onboarding workflow with four integrated components, each designed to eliminate a specific pain point in the existing process:
+                </p>
+                <ul class="list-disc pl-6 space-y-3">
+                    <li><strong>Online intake form</strong> -- a branded web form that captures all required client information upfront in a single sitting. No more back-and-forth emails asking for details that should have been collected at the start. The form adapts based on the type of service requested, showing only relevant fields.</li>
+                    <li><strong>Automated document request emails</strong> -- with secure upload links sent immediately after the intake form is submitted. Clients receive a clear checklist of exactly what they need to provide, with a simple drag-and-drop interface for uploading documents. No more searching through email attachments.</li>
+                    <li><strong>Status tracking dashboard</strong> -- showing every client's onboarding progress at a glance and flagging overdue items automatically. The admin team can see immediately which clients are stuck, what documents are missing, and which compliance steps are pending. Overdue items trigger automatic escalation.</li>
+                    <li><strong>Automated reminders</strong> -- to both clients and internal staff at each stage of the process. Clients receive gentle nudges when documents are outstanding. Staff receive notifications when their action is required. No more manual follow-up emails.</li>
+                </ul>
+                <p>
+                    The system integrates with their existing practice management software, so client data flows directly in without re-entry. When a client completes their intake form, their profile is automatically created in the practice management system with all the relevant details populated. No more copying data between systems.
+                </p>
+                <p>
+                    Compliance checks are built into the workflow -- the system won't mark a client as "onboarded" until all required documents and verifications are complete. This isn't just a checklist that someone might forget to check; it's a hard gate that ensures nothing is missed. The firm can demonstrate to regulators exactly when each compliance step was completed and by whom.
+                </p>
+                <p>
+                    The admin team now manages the entire process from a single dashboard instead of juggling emails, spreadsheets, and manual follow-ups. When a new enquiry comes in, the workflow starts automatically. The team's role shifted from chasing paperwork to managing exceptions -- stepping in only when the automated process flags something that needs human attention.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Results -->
+    <section class="py-16 bg-gray-50">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-gray-900 mb-12 text-center">Results</h2>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="bg-white p-6 rounded-lg shadow-sm text-center">
+                    <div class="text-3xl font-bold text-green-600 mb-2">2 weeks &rarr; 3 days</div>
+                    <p class="text-gray-600">Average onboarding time reduced</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-sm text-center">
+                    <div class="text-3xl font-bold text-green-600 mb-2">Zero missed</div>
+                    <p class="text-gray-600">Compliance steps since launch</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-sm text-center">
+                    <div class="text-3xl font-bold text-green-600 mb-2">60% reduction</div>
+                    <p class="text-gray-600">In admin email volume through client self-serve</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-sm text-center">
+                    <div class="text-3xl font-bold text-green-600 mb-2">100% visibility</div>
+                    <p class="text-gray-600">Into pipeline status for management</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technologies Used -->
+    <section class="py-16 bg-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-gray-900 mb-8 text-center">Technologies Used</h2>
+            <div class="flex flex-wrap justify-center gap-3">
+                {['Python', 'Power Automate', 'Custom Web Portal', 'Cloud Storage', 'Practice Management API'].map(tech => (
+                    <span class="bg-blue-50 text-blue-700 px-4 py-2 rounded-full text-sm font-medium">{tech}</span>
+                ))}
+            </div>
+        </div>
+    </section>
+
+    <!-- Quote -->
+    <section class="py-16 bg-gray-50">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <blockquote class="border-l-4 border-blue-600 pl-8 py-4">
+                <p class="text-xl text-gray-700 italic leading-relaxed mb-4">
+                    "We used to dread onboarding new clients because of the admin overhead. Now it practically runs itself, and we haven't missed a compliance step since."
+                </p>
+                <cite class="text-gray-600 font-semibold not-italic">&mdash; Practice Director</cite>
+            </blockquote>
+        </div>
+    </section>
+
+    <CTASection
+        heading="Ready to Streamline Your Client Onboarding?"
+        text="Book a free 30-minute process review. We'll map your onboarding workflow and identify where automation can save you the most time."
+        secondaryLabel="View All Case Studies"
+        secondaryHref="/case-studies"
+    />
+
+    <Footer />
+</BaseLayout>
