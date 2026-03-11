@@ -1,0 +1,91 @@
+---
+interface Props {
+  currentPath?: string;
+}
+
+const { currentPath = '' } = Astro.props;
+const path = currentPath || Astro.url.pathname;
+
+const links = [
+  { href: '/', label: 'Home' },
+  { href: '/services', label: 'Services' },
+  { href: '/case-studies', label: 'Case Studies' },
+  { href: '/about', label: 'About' },
+  { href: '/blog', label: 'Blog' },
+  { href: '/contact', label: 'Contact' },
+];
+---
+
+<nav class="bg-white shadow-sm sticky top-0 z-50">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center h-16">
+            <div class="flex-shrink-0">
+                <a href="/" class="text-2xl font-bold text-blue-600">Suir Data Analytics</a>
+            </div>
+
+            <!-- Desktop nav -->
+            <div class="hidden md:flex space-x-8">
+                {links.map(link => (
+                    <a
+                        href={link.href}
+                        class:list={[
+                            'hover:text-blue-600 transition',
+                            path === link.href || (link.href !== '/' && path.startsWith(link.href))
+                                ? 'text-blue-600 font-semibold'
+                                : 'text-gray-700',
+                        ]}
+                    >
+                        {link.label}
+                    </a>
+                ))}
+            </div>
+
+            <!-- Mobile hamburger -->
+            <button
+                id="mobile-menu-btn"
+                class="md:hidden p-2 rounded-lg text-gray-700 hover:bg-gray-100"
+                aria-label="Toggle menu"
+                aria-expanded="false"
+            >
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path id="hamburger-icon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                    <path id="close-icon" class="hidden" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+            </button>
+        </div>
+    </div>
+
+    <!-- Mobile menu -->
+    <div id="mobile-menu" class="hidden md:hidden bg-white border-t">
+        <div class="px-4 py-3 space-y-2">
+            {links.map(link => (
+                <a
+                    href={link.href}
+                    class:list={[
+                        'block py-2 px-3 rounded-lg transition',
+                        path === link.href || (link.href !== '/' && path.startsWith(link.href))
+                            ? 'text-blue-600 font-semibold bg-blue-50'
+                            : 'text-gray-700 hover:bg-gray-50',
+                    ]}
+                >
+                    {link.label}
+                </a>
+            ))}
+        </div>
+    </div>
+</nav>
+
+<script is:inline>
+  const btn = document.getElementById('mobile-menu-btn');
+  const menu = document.getElementById('mobile-menu');
+  const hamburger = document.getElementById('hamburger-icon');
+  const closeIcon = document.getElementById('close-icon');
+
+  btn.addEventListener('click', () => {
+    const isOpen = !menu.classList.contains('hidden');
+    menu.classList.toggle('hidden');
+    hamburger.classList.toggle('hidden');
+    closeIcon.classList.toggle('hidden');
+    btn.setAttribute('aria-expanded', String(!isOpen));
+  });
+</script>
