@@ -1,0 +1,93 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import ServiceCard from '../../components/ServiceCard.astro';
+import CTASection from '../../components/CTASection.astro';
+import { breadcrumbSchema } from '../../data/structured-data';
+
+const breadcrumbs = breadcrumbSchema([
+  { name: 'Home', url: 'https://www.suirda.ie/' },
+  { name: 'Services', url: 'https://www.suirda.ie/services' },
+]);
+---
+
+<BaseLayout
+  title="Services — Automation, Software, Data & AI"
+  description="Business automation, custom software development, data analytics, and AI solutions for SMEs in Tipperary, Kilkenny & Laois. Affordable, phased approach."
+  structuredData={breadcrumbs}
+>
+    <Header />
+
+    <section class="py-20 bg-gradient-to-br from-blue-50 to-white">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">What We Do</h1>
+            <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                We help SMEs in Tipperary, Kilkenny, and Laois save time, reduce costs, and grow through automation, custom software, data analytics, and AI.
+            </p>
+        </div>
+    </section>
+
+    <section class="py-16 bg-white">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 gap-8">
+                <ServiceCard
+                    icon="⚡"
+                    title="Business Process Automation"
+                    description="Eliminate manual data entry, automate reporting, and connect your systems. Typical ROI: 10+ hours saved per week."
+                    href="/services/business-automation"
+                />
+                <ServiceCard
+                    icon="🛠️"
+                    title="Custom Software Development"
+                    description="Bespoke web apps, customer portals, and internal tools built to fit how your business actually works. From €5k."
+                    href="/services/custom-software"
+                />
+                <ServiceCard
+                    icon="📊"
+                    title="Data Analytics & Reporting"
+                    description="Turn scattered data into clear dashboards and automated reports. Make better decisions with real-time visibility."
+                    href="/services/data-analytics"
+                />
+                <ServiceCard
+                    icon="🤖"
+                    title="AI & Intelligent Automation"
+                    description="Automate document processing, add intelligent chatbots, and use predictive analytics to stay ahead."
+                    href="/services/ai-automation"
+                />
+            </div>
+        </div>
+    </section>
+
+    <section class="py-16 bg-gray-50">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-center text-gray-900 mb-12">Our Approach</h2>
+            <div class="grid md:grid-cols-3 gap-8 text-center">
+                <div>
+                    <div class="text-3xl font-bold text-blue-600 mb-2">1</div>
+                    <h3 class="font-semibold mb-2">Discover</h3>
+                    <p class="text-gray-600 text-sm">Free 30-minute call to map your biggest pain points and opportunities.</p>
+                </div>
+                <div>
+                    <div class="text-3xl font-bold text-blue-600 mb-2">2</div>
+                    <h3 class="font-semibold mb-2">Pilot</h3>
+                    <p class="text-gray-600 text-sm">Start small with a focused project (€2k-5k) to prove ROI before scaling.</p>
+                </div>
+                <div>
+                    <div class="text-3xl font-bold text-blue-600 mb-2">3</div>
+                    <h3 class="font-semibold mb-2">Scale</h3>
+                    <p class="text-gray-600 text-sm">Expand what works. Add features, automate more, grow with confidence.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <CTASection
+        heading="Not Sure Where to Start?"
+        text="Book a free 30-minute process review. We'll identify 2-3 quick wins for your business."
+        secondaryLabel="View Case Studies"
+        secondaryHref="/case-studies"
+    />
+
+    <Footer />
+</BaseLayout>
